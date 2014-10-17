@@ -11,11 +11,11 @@ $(function() {
 	});
 
 	$(document).on('delete', '.widget', function() {
-		$(this).remove();
+		$(this).element('remove');
 	});
 
 	$(document).on('copy', '.widget', function() {
-		console.log('copy');
+		$(this).element('clone');
 	});
 
 	$(document).on('arrange', '.widget', function() {
