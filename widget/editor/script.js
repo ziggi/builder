@@ -9,6 +9,17 @@ $(function() {
 		$('.widget-editor').remove();
 	});
 
+	$(document).on('active', '.widget', function() {
+		$widget = $(this);
+		$.ajax({
+			url: "widget/editor/editor.html",
+			cache: false,
+			success: function(data) {
+				$widget.append(data);
+			},
+		});
+	});
+
 	$(document).on('click', '.widget', function(event) {
 		var editor_action = $(event.target).attr('editor-action');
 

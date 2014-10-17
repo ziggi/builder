@@ -14,9 +14,13 @@
 		clone: function() {
 			elementId++;
 
+			this.trigger('inactive');
+
 			this.clone()
 				.attr('id', 'element-' + elementId)
-				.appendTo($(this).parent());
+				.css({left: '50%', top: '50%'})
+				.appendTo($(this).parent())
+				.trigger('active');
 		},
 
 		remove: function() {

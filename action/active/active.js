@@ -1,18 +1,5 @@
 $(function() {
 
-	$(document).on('mousedown', '.widget-inner', function() {
-		$widget = $(this).parents('.widget');
-
-		var isEditing = $widget.data('editing');
-
-		if (isEditing) {
-			return;
-		}
-
-		$widget.trigger('inactive');
-		$widget.trigger('active');
-	});
-
 	$(document).on('mouseup', '.widget-inner', function() {
 		$widget = $(this).parents('.widget');
 
@@ -22,13 +9,8 @@ $(function() {
 			return;
 		}
 
-		$.ajax({
-			url: "widget/editor/editor.html",
-			cache: false,
-			success: function(data) {
-				$widget.append(data);
-			},
-		});
+		$widget.trigger('inactive');
+		$widget.trigger('active');
 	});
 
 	$(document).on('click', function(event) {
