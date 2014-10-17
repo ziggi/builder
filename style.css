@@ -5,6 +5,7 @@ body {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+	font: 13px/19px Arial,Helvetica,'Liberation Sans',FreeSans,sans-serif;
 }
 
 div {

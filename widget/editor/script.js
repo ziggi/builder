@@ -76,7 +76,7 @@ $(function() {
 	});
 
 	$(document).on('click-action', '.widget', function() {
-		console.log('click-action');
+		$(this).trigger('editor-link');
 	});
 
 	$(document).on('edit', '.widget', function() {

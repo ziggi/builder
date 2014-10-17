@@ -1,0 +1,96 @@
+ul.link-manager.link-menu.selector-item li {
+	margin-right: 4px;
+	margin-left: 2px;
+}
+
+.widget-editor .link-manager.link-url {
+min-width: 555px;
+}
+
+.widget-editor .link-manager.link-url>li {
+float: left;
+}
+
+.widget-editor .link-manager .link-button-selector, .widget-editor .link-manager .select[name="landing-page"] {
+width: 305px;
+float: left;
+}
+
+.widget-editor .input-selector.link-button-selector {
+color: #fff;
+}
+
+.widget-editor .input-selector {
+background-color: transparent;
+padding: 4px;
+width: 140px;
+color: #5b5b5b;
+font-size: 14px;
+border-color: #5b5b5b;
+}
+
+input[type="text"], input[type="password"], input[type="input"] {
+background: #eee;
+border: 1px solid #9f9f9f;
+font: 1em/1.2em Arial,Helvetica,'Liberation Sans',FreeSans,sans-serif;
+padding: .2em;
+margin: 0 .5em .6em 0;
+color: #525252;
+line-height: 1.2em;
+vertical-align: middle;
+height: 1.5em;
+}
+
+.widget-editor .link-manager .link-options {
+min-width: 145px;
+margin-left: 8px;
+float: left;
+}
+
+.widget-editor .link-options ul {
+width: 90px;
+}
+
+.widget-video .widget-editor .editor-active .video-options ul, .widget-editor .link-options ul {
+margin: 0;
+padding: 0;
+list-style: none;
+width: 100px;
+height: 30px;
+}
+
+.widget-video .widget-editor .editor-active .video-options li.selected, .widget-editor .link-options li.selected {
+color: #fff;
+}
+
+.widget-video .widget-editor .editor-active .video-options li, .widget-editor .link-options li {
+display: inline-block;
+width: 90px;
+font-style: normal;
+font-size: 11px;
+line-height: 13px;
+color: #6e6e6e;
+height: 15px;
+float: left;
+text-align: left;
+cursor: pointer;
+}
+
+.widget-video .widget-editor .editor-active .video-options li.selected span, .widget-editor .link-options li.selected span {
+background-position: 0 -10px;
+}
+
+.widget-video .widget-editor .editor-active .video-options li span, .widget-editor .link-options li span {
+display: inline-block;
+width: 10px;
+height: 10px;
+margin-right: 5px;
+background: url('img-ip2-site-checkbox-508.png');
+background-position: left top;
+}
+
+.widget-editor .link-manager .link-button-selector, .widget-editor .link-manager .select[name="landing-page"] {
+width: 295px;
+float: left;
+}
+

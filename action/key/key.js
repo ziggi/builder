@@ -7,6 +7,12 @@
 	}
 
 	$(document).on('keydown', function(event) {
+		var isEdit = $('.widget-text-editing').length !== 0;
+		console.log(isEdit);
+		if (isEdit) {
+			return;
+		}
+
 		if (keyHandler[event.keyCode] != undefined) {
 			return keyHandler[event.keyCode]();
 		}
