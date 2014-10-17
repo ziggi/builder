@@ -1,0 +1,13 @@
+.widget-image-parallax {
+	background: 50% 0 no-repeat fixed;
+	background-position: 50%;
+	padding: 0px;
+	background-position: center;
+	background-size: cover !important;
+	box-sizing: border-box;
+	z-index: -10;
+}
+
+.widget-image-parallax .overlay {
+	background-color: rgba(139, 202, 57, 0.8);
+}

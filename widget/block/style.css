@@ -1,0 +1,30 @@
+.page_block {
+	position: relative;
+}
+
+.block_inner {
+	position: relative;
+	margin: 0 auto;
+	height: 100%;
+	width: 960px;
+	border-left: 1px dashed #03ddff;
+	border-right: 1px dashed #03ddff;
+	background-color: transparent;
+}
+
+.block_inner_big {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.resize-line {
+	position: absolute;
+	height: 5px;
+	bottom: -1px;
+	left: 0;
+	width: 100%;
+	z-index: 0;
+	border-bottom: 1px dashed #03ddff;
+	cursor: ns-resize;
+} 

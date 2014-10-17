@@ -1,0 +1,20 @@
+.widget-text {
+	outline: none;
+}
+
+.widget-text .widget-inner .widget-text-editor {
+	width: 100%;
+	outline: none;
+	line-height: 20px;
+}
+
+div.edit {
+	cursor: text;
+}
+
+.widget-text-selecting {
+	-webkit-user-select: text;
+	-moz-user-select: text;
+	-ms-user-select: text;
+	user-select: text;
+}

@@ -1,0 +1,176 @@
+.admin-editor {
+	position: fixed;
+	width: 100%;
+	z-index: 10000;
+}
+
+.admin-editor-header {
+	background: #fff;
+	height: 38px;
+	position: fixed;
+	width: 100%;
+	z-index: 10000;
+	border-bottom: 1px solid #a0a0a0;
+}
+
+.admin-editor-header .controls-left {
+	float: left;
+	margin: 0;
+	height: 40px;
+}
+
+.admin-editor-header .controls-right {
+	float: right;
+	margin: 0;
+	height: 40px;
+}
+
+.admin-editor-header li {
+	line-height: 16px;
+	margin: 0;
+	display: inline-block;
+	vertical-align: top;
+	float: left;
+	position: relative;
+}
+
+.admin-editor-header ul {
+	float: left;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.admin-editor-header ul:last-child {
+	margin: 0;
+}
+
+.admin-editor-header .controls-button {
+	line-height: 40px;
+	color: #3f3f3f;
+	font-family: Arial;
+	font-size: 15px;
+	padding-left: 41px;
+	padding-right: 13px;
+	height: 40px;
+	cursor: pointer;
+	display: inline-block;
+}
+
+.admin-editor-header .controls-button-hover {
+	background-color: #efefef;
+}
+
+.rightborder {
+	border-right: 1px solid #cfcfcf;
+}
+
+.leftborder {
+	border-left: 1px solid #cfcfcf;
+}
+
+#button-setting:before {
+	content: "";
+	background: url('images/admin-setting.png') 1px 12px no-repeat;
+	height: 28px;
+	width: 20px;
+	position: absolute;
+	margin-left: -25px;
+}
+
+#button-add:before {
+	content: "";
+	background: url('images/admin-add-new.png') 1px 12px no-repeat;
+	height: 28px;
+	width: 20px;
+	position: absolute;
+	margin-left: -25px;
+}
+
+.admin-editor-toolbar {
+	position: relative;
+	top: 38px;
+	z-index: 10000;
+}
+
+.admin-editor-toolbar .admin-editor-wrapper {
+	display: none;
+	padding: 10px;
+	height: 100px;
+	background: #3b3b3b;
+}
+
+.admin-editor-toolbar .item {
+	width: 78px;
+	height: 96px;
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	margin-right: 7px;
+	margin-bottom: 0;
+	background-color: #232323;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	border: 1px solid #131313;
+	text-align: center;
+	font-size: 12px;
+	color: #fff;
+	line-height: 161px;
+	vertical-align: bottom;
+	font-family: Arial,Helvetica,'Liberation Sans',FreeSans,sans-serif;
+}
+
+.admin-editor-toolbar .item:before {
+	content: "";
+	width: 48px;
+	height: 48px;
+	position: absolute;
+	left: 16px;
+	top: 16px;
+	background-position: top;
+}
+
+.admin-editor-toolbar .item:hover {
+	background-color: #2a2a2a;
+}
+
+.admin-editor-toolbar .item-button:before {
+	background-image: url('images/admin-add-button.png');
+}
+
+.admin-editor-toolbar .item-image:before {
+	background-image: url('images/admin-add-image.png');
+}
+
+.admin-editor-slider {
+	width: 100%;
+	background: #3b3b3b;
+	border-top: 1px solid #222;
+	cursor: pointer;
+	font-size: 9px;
+	line-height: 12px;
+	font-weight: bold;
+	height: 14px;
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+	-moz-box-shadow: 0 0 5px #555;
+	-webkit-box-shadow: 0 0 5px #555;
+	box-shadow: 0 0 5px #555;
+	z-index: 10000;
+}
+
+.admin-editor-slider .toggle-open {
+	background: url("images/admin-arrow.png") no-repeat -4px top transparent;
+	height: 4px;
+	width: 7px;
+	margin: 5px auto 0;
+}
+
+.admin-editor-slider .toggle-close {
+	background: url("images/admin-arrow.png") no-repeat -4px bottom transparent;
+	height: 4px;
+	width: 7px;
+	margin: 5px auto 0;
+}

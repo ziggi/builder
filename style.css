@@ -1,0 +1,20 @@
+body {
+	margin: 0;
+	padding: 0;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+div {
+	display: block;
+}
+
+p {
+	margin: 0;
+}
+
+.container {
+	padding-top: 55px;
+}
