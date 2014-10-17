@@ -21,7 +21,9 @@ $(function() {
 		var leftBorder = $widget.parent().offset().left;
 		var rightBorder = $widget.parent().offset().left + $widget.parent().width() - $widget.width();
 
-		$(document).bind('mousemove.widget', function(event) {
+		$(document).bind('mousemove.widget', {obj: $widget}, function(event) {
+			$widget = event.data.obj;
+			
 			newX = event.pageX - cursorOffsetX;
 			newY = event.pageY - cursorOffsetY;
 
@@ -43,7 +45,9 @@ $(function() {
 			});
 		});
 
-		$(document).bind('mouseup.widget', function(event) {
+		$(document).bind('mouseup.widget', {obj: $widget}, function(event) {
+			$widget = event.data.obj;
+
 			var $block = null;
 
 			$('.page_block').each(function(index, item) {
@@ -53,7 +57,7 @@ $(function() {
 			});
 
 			if ($block !== null) {
-				var previous_block = $widget.parent().attr('class');
+				var previous_block = $widget.parents('div[class^="block_inner"]').attr('class');
 
 				$block_inner = $block.find('div[class^="block_inner"]');
 
