@@ -2,7 +2,7 @@ $(function() {
 
 	var IMAGE_WIDTH_MIN = 100;
 
-	$(document).on('resize', '.widget-image', function() {
+	$(document).on('active', '.widget-image', function() {
 		$(this).widgetResize('init');
 	});
 

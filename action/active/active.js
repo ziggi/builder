@@ -10,7 +10,6 @@ $(function() {
 		}
 
 		$widget.trigger('inactive');
-		$widget.trigger('resize');
 		$widget.trigger('active');
 	});
 

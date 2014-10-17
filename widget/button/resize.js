@@ -3,7 +3,7 @@ $(function() {
 	var BUTTON_WIDTH_MIN = 70;
 	var BUTTON_HEIGHT_MIN = 30;
 
-	$(document).on('resize', '.widget-button', function() {
+	$(document).on('active', '.widget-button', function() {
 		$(this).widgetResize('init');
 	});
 

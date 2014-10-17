@@ -2,7 +2,7 @@ $(function() {
 
 	var TEXT_WIDTH_MIN = 100;
 
-	$(document).on('resize', '.widget-headline', function() {
+	$(document).on('active', '.widget-headline', function() {
 		$(this).widgetResize('init', 'side');
 	});
 
