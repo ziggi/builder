@@ -1,12 +1,5 @@
 $(function() {
 
-	$('div').bind('inactive', function(event) {
-		$('.widget').removeClass('active');
-		$('.widget-text-editor').trigger('editStop');
-		$('.widget').widgetResize('reset');
-		$('.widget-editor').remove();
-	});
-
 	$(document).on('mousedown', '.widget-inner', function() {
 		$widget = $(this).parents('.widget');
 
@@ -17,14 +10,8 @@ $(function() {
 		}
 
 		$widget.trigger('inactive');
-		
-		if ($widget.hasClass('widget-text')) {
-			$widget.widgetResize('init', 'side');
-		} else {
-			$widget.widgetResize('init');
-		}
-
-		$widget.addClass('active');
+		$widget.trigger('resize');
+		$widget.trigger('active');
 	});
 
 	$(document).on('mouseup', '.widget-inner', function() {

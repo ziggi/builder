@@ -1,9 +1,12 @@
- 
 $(function() {
 
 	var BUTTON_WIDTH_MIN = 70;
 	var BUTTON_HEIGHT_MIN = 30;
-	
+
+	$(document).on('resize', '.widget-button', function() {
+		$(this).widgetResize('init');
+	});
+
 	$(document).on('mousedown', '.widget-button .resize-block', function(event) {
 		var $widget = $(this).parent();
 		if ($widget.data('editing')) {

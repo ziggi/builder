@@ -2,6 +2,10 @@ $(function() {
 
 	var IMAGE_WIDTH_MIN = 100;
 
+	$(document).on('resize', '.widget-image', function() {
+		$(this).widgetResize('init');
+	});
+
 	$(document).on('dragstart', '.widget-image', function(event) {
 		return false;
 	});

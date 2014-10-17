@@ -2,28 +2,27 @@ $(function() {
 
 	var TEXT_WIDTH_MIN = 100;
 
-
-	$(document).on('resize', '.widget-text', function() {
+	$(document).on('resize', '.widget-headline', function() {
 		$(this).widgetResize('init', 'side');
 	});
 
-	$(document).on('mousedown', '.widget-text .resize-block', function(event) {
+	$(document).on('mousedown', '.widget-headline .resize-block', function(event) {
 		var $obj = $(this).parent();
 		if ($obj.data('editing')) {
 			event.stopImmediatePropagation();
 		}
 
-		$(document).bind('mouseup.widget-text', function(event) {
-			$(this).unbind('mousemove.widget-text');
-			$(this).unbind('mouseup.widget-text');
+		$(document).bind('mouseup.widget-headline', function(event) {
+			$(this).unbind('mousemove.widget-headline');
+			$(this).unbind('mouseup.widget-headline');
 		});
 	});
 
 
-	$(document).on('mousedown', '.widget-text .resize-block-e', function() {
+	$(document).on('mousedown', '.widget-headline .resize-block-e', function() {
 		var $widget = $(this).parent();
 
-		$(document).bind('mousemove.widget-text', function(event) {
+		$(document).bind('mousemove.widget-headline', function(event) {
 			var new_width = event.pageX - $widget.position().left - getPageLeftOffset($widget);
 
 			var max_height = $widget.parents('.page_block').height() - $widget.position().top;
@@ -42,10 +41,10 @@ $(function() {
 		});
 	});
 
-	$(document).on('mousedown', '.widget-text .resize-block-w', function() {
+	$(document).on('mousedown', '.widget-headline .resize-block-w', function() {
 		var $widget = $(this).parent();
 
-		$(document).bind('mousemove.widget-text', function(event) {
+		$(document).bind('mousemove.widget-headline', function(event) {
 			var new_width = $widget.position().left - event.pageX + $widget.width() + getPageLeftOffset($widget);
 
 			var max_height = $widget.parents('.page_block').height() - $widget.position().top;

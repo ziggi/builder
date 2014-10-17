@@ -1,3 +1,7 @@
+div.edit {
+	cursor: text;
+}
+
 .widget-editor {
 	position: absolute;
 	left: 0;

@@ -1,5 +1,14 @@
 $(function() {
+
+	CKEDITOR.config.language = 'en';
+	CKEDITOR.config.extraPlugins = 'ckeditor-gwf-plugin';
+	CKEDITOR.config.font_names = CKEDITOR.config.font_names + '; Open Sans; Seymour One; Ubuntu Mono; Fira Sans; Noto Sans; Playfair Display; Lora; PT Sans; Poiret One; Andika; Fira Mono; PT Sans Narrow; Tinos; Philosopher; Neucha; Bad Script; Istok Web; Yeseva One; Arimo; Kelly Slab; Noto Serif; Ubuntu; Ruslan Display; PT Serif Caption; PT Mono; Marck Script; Tenor Sans; Oranienbaum; PT Serif; Lobster; Russo One; Underdog; Cousine; Ubuntu Condensed; EB Garamond; Roboto Slab; Marmelad; Jura; Forum; Didact Gothic; Playfair Display SC; Anonymous Pro; Comfortaa; Prosto One; Stalinist One; Press Start 2P; Scada; Cuprum; Exo 2; PT Sans Caption; Roboto Condensed; Play; Ledger; Open Sans; Open Sans Condensed; Roboto;';
+	CKEDITOR.disableAutoInline = true;
 	
+	$(document).on('inactive', '.widget', function(event) {
+		$('.widget-editor').remove();
+	});
+
 	$(document).on('click', '.widget', function(event) {
 		var editor_action = $(event.target).attr('editor-action');
 
