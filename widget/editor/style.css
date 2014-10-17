@@ -202,6 +202,7 @@ div.edit {
 }
 
 .duplicate-button:hover:after {
+	content: "Копировать";
 	z-index: 9999;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -229,14 +230,22 @@ div.edit {
 	margin-left: -6px;
 }
 
-.url-button:before {
-	content: " ";
-	background: url('img-ip2-btns_builder-link-504.png') 0 6px no-repeat;
-	width: 24px;
-	height: 24px;
+.arrange-button:hover:after {
+	content: "Положение";
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	font-size: 11px;
+	background-color: #000;
+	color: #fff;
+	max-width: 200px;
+	padding: 1px 8px;
+	text-align: center;
+	white-space: normal;
 	position: absolute;
-	margin-top: 1px;
-	margin-left: -7px;
+	margin-top: 32px;
+	margin-left: -23px;
+	font-weight: bold;
 }
 
 .url-button:before {
@@ -247,6 +256,24 @@ div.edit {
 	position: absolute;
 	margin-top: 1px;
 	margin-left: -7px;
+}
+
+.url-button:hover:after {
+	content: "Событие нажатия";
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	font-size: 11px;
+	background-color: #000;
+	color: #fff;
+	max-width: 200px;
+	padding: 1px 8px;
+	text-align: center;
+	white-space: normal;
+	position: absolute;
+	margin-top: 32px;
+	margin-left: -23px;
+	font-weight: bold;
 }
 
 .delete-button:before {
@@ -257,6 +284,24 @@ div.edit {
 	position: absolute;
 	margin-top: 7px;
 	margin-left: -6px;
+}
+
+.delete-button:hover:after {
+	content: "Удалить";
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	font-size: 11px;
+	background-color: #000;
+	color: #fff;
+	max-width: 200px;
+	padding: 1px 8px;
+	text-align: center;
+	white-space: normal;
+	position: absolute;
+	margin-top: 32px;
+	margin-left: -23px;
+	font-weight: bold;
 }
 
 .widget-editor li.arrange-backward-button {

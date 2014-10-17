@@ -8,10 +8,6 @@
 	line-height: 20px;
 }
 
-div.edit {
-	cursor: text;
-}
-
 .widget-headline-selecting {
 	-webkit-user-select: text;
 	-moz-user-select: text;
