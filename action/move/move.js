@@ -18,14 +18,17 @@ $(function() {
 		var newX = event.pageX - cursorOffsetX;
 		var newY = event.pageY - cursorOffsetY;
 
+		var leftBorder = $widget.parent().offset().left;
+		var rightBorder = $widget.parent().offset().left + $widget.parent().width() - $widget.width();
+
 		$(document).bind('mousemove.widget', function(event) {
 			newX = event.pageX - cursorOffsetX;
 			newY = event.pageY - cursorOffsetY;
 
-			if (newX < 10) {
-				newX = 10;
-			} else if (newX > $(window).width() - $widget.width() - 10) {
-				newX = $(window).width() - $widget.width() - 10;
+			if (newX < leftBorder) {
+				newX = leftBorder;
+			} else if (newX > rightBorder) {
+				newX = rightBorder;
 			}
 
 			if (newY < 55) {
