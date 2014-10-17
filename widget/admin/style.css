@@ -143,6 +143,14 @@
 	background-image: url('images/admin-add-image.png');
 }
 
+.admin-editor-toolbar .item-paragraph:before {
+	background-image: url('images/admin-add-paragraph.png');
+}
+
+.admin-editor-toolbar .item-headline:before {
+	background-image: url('images/admin-add-headline.png');
+}
+
 .admin-editor-slider {
 	width: 100%;
 	background: #3b3b3b;
