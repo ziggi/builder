@@ -1,5 +1,17 @@
 $(function() {
 
+	$(document).on('mousedown', '.widget-inner', function() {
+		$widget = $(this).parents('.widget');
+
+		var isEditing = $widget.data('editing');
+
+		if (isEditing) {
+			return;
+		}
+
+		$('.widget').trigger('inactive');
+	});
+
 	$(document).on('mouseup', '.widget-inner', function() {
 		$widget = $(this).parents('.widget');
 
@@ -9,7 +21,7 @@ $(function() {
 			return;
 		}
 
-		$widget.trigger('inactive');
+		$('.widget').trigger('inactive');
 		$widget.trigger('active');
 	});
 

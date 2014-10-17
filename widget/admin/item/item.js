@@ -10,6 +10,7 @@
 				$(data)
 					.appendTo('.block_inner:first')
 					.attr('id', 'element-' + elementId)
+					.find('.widget-inner').css('z-index', 1)
 					.trigger('active');
 			});
 		},
