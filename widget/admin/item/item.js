@@ -7,7 +7,10 @@
 			elementId++;
 
 			$.get(page, function(data) {
-				$(data).appendTo('.block_inner:first').attr('id', 'element-' + elementId);
+				$(data)
+					.appendTo('.block_inner:first')
+					.attr('id', 'element-' + elementId)
+					.trigger('active');
 			});
 		},
 
