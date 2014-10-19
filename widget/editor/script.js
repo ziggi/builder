@@ -14,9 +14,18 @@ $(function() {
 			url: "widget/editor/editor.html",
 			cache: false,
 			success: function(data) {
-				$(data)
+				var $editor = $(data);
+
+				$editor
 					.appendTo($widget)
 					.show();
+
+				var isText = $widget.is('.widget-text');
+				var isHeadline = $widget.is('.widget-headline');
+
+				if (isText || isHeadline) {
+					$editor.find('.url-button').hide();
+				}
 			},
 		});
 	});
