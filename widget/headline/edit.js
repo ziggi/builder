@@ -21,26 +21,7 @@ $(function() {
 		$(this).addClass('widget-text-selecting');
 		$(this).attr('id', 'headline-edit');
 
-		var $edit_block = $(this).parents('.widget-headline');
-		tinymce.init({
-			selector: "div.widget-text-editing",
-			inline: true,
-			auto_focus: "headline-edit",
-			menubar: false,
-			skin: "instapage",
-			theme: "modern",
-			plugins: "link paste textcolor autoresize",
-			toolbar: "forecolor fontselect fontsizeselect bold italic underline | alignleft aligncenter alignright | link | done",
-			setup : function(ed) {
-				ed.addButton('done', {
-					text: 'Готово',
-					onclick: function() {
-						$edit_block.trigger('inactive');
-						$edit_block.trigger('active');
-					}
-				});
-			}
-		});
+		$('.widget-headline-editor').trigger('textEditor', ['headline', 'headline-edit']);
 	});
 
 	$(document).on('editStop', '.widget-headline-editor', function() {
