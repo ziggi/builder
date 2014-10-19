@@ -29,9 +29,9 @@ $(function() {
 		var isWidget = $(event.target).parents('.widget').is('.widget');
 		var isWidgetEditor = $(event.target).parents('.widget-editor').is('.widget-editor');
 		var isEditing = $(event.target).parents('.widget').data('editing');
-		var isCKEditing = $(event.target).parents('#cke_ckedit').is('div');
+		var isTextEditing = $(event.target).parents('[id^="mceu_"]').length !== 0;
 
-		if (!isWidget && !isWidgetEditor && !isEditing && !isCKEditing) {
+		if (!isWidget && !isWidgetEditor && !isEditing && !isTextEditing) {
 			$('.widget').trigger('inactive');
 		}
 	});
