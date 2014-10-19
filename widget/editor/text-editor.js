@@ -1,5 +1,13 @@
 $(function() {
 
+	$(document).on('textEditorShow', function() {
+		$('[id^="mceu_"]').show();
+	});
+
+	$(document).on('textEditorHide', function() {
+		$('[id^="mceu_"]').hide();
+	});
+
 	$(document).on('textEditor', '.widget-text-editing', function(event, type, focus) {
 		var toolbar_items = "forecolor fontselect fontsizeselect weightmenu italic underline bullist numlist | alignleft aligncenter alignright | link | done";
 
@@ -7,7 +15,7 @@ $(function() {
 			toolbar_items = "forecolor fontselect fontsizeselect weightmenu italic underline | alignleft aligncenter alignright | link | done";
 		}
 
-		var $edit_block = $(this).parents('.widget-' + type);
+		var $widget_text = $(this);
 
 		$(this).tinymce({
 			inline: true,
@@ -24,15 +32,17 @@ $(function() {
 					title: 'Добавить ссылку',
 					icon: 'link',
 					onclick: function() {
-						console.log('link');
+						$widget_text.trigger('textEditorHide');
+						$('.widget-editor').show();
+						$widget_text.trigger('editor-link');
 					}
 				});
 
 				editor.addButton('done', {
 					text: 'Готово',
 					onclick: function() {
-						$edit_block.trigger('inactive');
-						$edit_block.trigger('active');
+						$widget_text.trigger('inactive');
+						$widget_text.trigger('active');
 					}
 				});
 

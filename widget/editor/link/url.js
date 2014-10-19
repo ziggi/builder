@@ -31,7 +31,13 @@ $(function() {
 	$(document).on('done', '.widget-editor .link-url', function() {
 		$('.link-url').removeClass('widget-text-editing');
 		$('.link-url').hide();
-		$('.widget-editor .menu').show();
+
+		var isTextEditing = $('#text-edit').length !== 0;
+		if (isTextEditing) {
+			$(this).trigger('textEditorShow');
+		} else {
+			$('.widget-editor .menu').show();
+		}
 	});
 
 	$(document).on('click', '.link-options li', function() {

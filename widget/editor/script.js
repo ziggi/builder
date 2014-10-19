@@ -5,12 +5,18 @@ $(function() {
 	});
 
 	$(document).on('active', '.widget', function() {
+		$(this).trigger('editor-widget');
+	});
+
+	$(document).on('editor-widget', '.widget', function() {
 		$widget = $(this);
 		$.ajax({
 			url: "widget/editor/editor.html",
 			cache: false,
 			success: function(data) {
-				$widget.append(data);
+				$(data)
+					.appendTo($widget)
+					.show();
 			},
 		});
 	});

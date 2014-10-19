@@ -3,15 +3,16 @@ $(function() {
 	$(document).on('editor-link', function() {
 		$('.widget-editor .menu').hide();
 
-		var isCreated = $('.link-menu').is('ul');
-
+		var isCreated = $('.link-menu').length !== 0;
 		if (!isCreated) {
 			$.get('widget/editor/link/add.html', function(data) {
-				$('.widget-editor').append(data);
+				$(data)
+					.appendTo('.widget-editor')
+					.show();
 			});
+		} else {
+			$('.link-menu').show();
 		}
-
-		$('.link-menu').show();
 	});
 
 	$(document).on('click', '.widget-editor .link-menu', function(event) {
@@ -26,7 +27,13 @@ $(function() {
 
 	$(document).on('back', '.widget-editor .link-menu', function() {
 		$('.link-menu').hide();
-		$('.widget-editor .menu').show();
+
+		var isTextEditing = $('#text-edit').length !== 0;
+		if (isTextEditing) {
+			$(this).trigger('textEditorShow');
+		} else {
+			$('.widget-editor .menu').show();
+		}
 	});
 
 	$(document).on('url', '.widget-editor .link-menu', function() {
