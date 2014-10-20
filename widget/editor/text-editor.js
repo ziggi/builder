@@ -28,6 +28,22 @@ $(function() {
 			plugins: "paste textcolor autoresize",
 			toolbar: toolbar_items,
 			setup: function(editor) {
+				var isTextNotSelected = false;
+
+				editor.on('BeforeExecCommand', function(e) {
+					isTextNotSelected = editor.selection.getContent().length === 0;
+					if (isTextNotSelected) {
+						editor.selection.select(editor.getBody(), true);
+					}
+				});
+
+				editor.on('ExecCommand', function(e) {
+					if (isTextNotSelected) {
+						editor.selection.select(editor.getBody(), false);
+						isTextNotSelected = false;
+					}
+				});
+
 				editor.addButton('link', {
 					title: 'Добавить ссылку',
 					icon: 'link',
@@ -53,13 +69,18 @@ $(function() {
 					weightArray.push({
 						text: 'Weight-' + value,
 						onclick: function() {
-							editor.formatter.register('weight-' + value, {
-								inline : 'span',
-								styles : {fontWeight: value.toString()}
-							});
-							editor.formatter.apply('weight-' + value);
+							editor.execCommand('changeWeight', true, value);
 						}
 					});
+				});
+
+				editor.addCommand('changeWeight', function(ui, value) {
+					editor.formatter.register('weight-' + value, {
+						inline : 'span',
+						styles : {fontWeight: value.toString()}
+					});
+					
+					editor.formatter.apply('weight-' + value);
 				});
 
 				editor.addButton('weightmenu', {
@@ -69,7 +90,6 @@ $(function() {
 				});
 			}
 		});
-
 		
 	});
 });
