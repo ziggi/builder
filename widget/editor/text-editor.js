@@ -39,7 +39,7 @@ $(function() {
 
 				editor.on('ExecCommand', function(e) {
 					if (isTextNotSelected) {
-						editor.selection.select(editor.getBody(), false);
+						editor.selection.collapse();
 						isTextNotSelected = false;
 					}
 				});
@@ -79,7 +79,7 @@ $(function() {
 						inline : 'span',
 						styles : {fontWeight: value.toString()}
 					});
-					
+
 					editor.formatter.apply('weight-' + value);
 				});
 
