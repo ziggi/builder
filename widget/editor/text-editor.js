@@ -8,6 +8,49 @@ $(function() {
 		$('[id^="mceu_"]').hide();
 	});
 
+	$(document).on('click', '.flat-colors a', function() {
+		var $container = $(this).parents('.mce-container');
+
+		var isFlatColors = $('.flat-color-block').is(':visible');
+
+		if (isFlatColors) {
+			$('.flat-color-block').hide();
+			$container.find('.mce-colorbutton-grid').show();
+
+			$(this).text('Flat');
+		} else {
+			$container.find('.mce-colorbutton-grid').not('.mce-colorflat-grid').hide();
+			$(this).text('Обычные');
+
+			var isCreated = $('.flat-color-block').length > 0;
+			if (!isCreated) {
+				$.get('widget/editor/flat_colors.html', function(data) {
+					$(data)
+						.prependTo($container)
+						.show();
+				});
+			} else {
+				$('.flat-color-block').show();
+			}
+		}
+	});
+
+	$(document).on('click', '.palette-colors a', function(e) {
+		var isCreated = $('#tinymce-color-picker').spectrum('container').is('.sp-container');
+		if (!isCreated) {
+			$('#tinymce-color-picker').spectrum({
+				showButtons: false,
+				move: function(color) {
+					$('.mce-preview').css('background-color', color.toHexString());
+					tinymce.activeEditor.selection.editor.execCommand('ForeColor', false, color.toHexString());
+				}
+			});
+		}
+		
+		$('#tinymce-color-picker').spectrum('toggle');
+		return false;
+	});
+
 	$(document).on('textEditor', '.widget-text-editing', function(event, type, focus) {
 		var toolbar_items = "forecolor fontselect fontsizeselect weightmenu italic underline bullist numlist | alignleft aligncenter alignright | link | done";
 
@@ -28,6 +71,9 @@ $(function() {
 			plugins: "paste textcolor autoresize",
 			toolbar: toolbar_items,
 			setup: function(editor) {
+				editor.settings.textcolor_cols = 5;
+				editor.settings.textcolor_rows = 4;
+
 				var isTextNotSelected = false;
 
 				editor.on('BeforeExecCommand', function(e) {

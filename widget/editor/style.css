@@ -315,3 +315,7 @@ div.widget-text-editing {
 .edit {
 	outline: none;
 } 
+
+.sp-dd {
+	display: none;
+}

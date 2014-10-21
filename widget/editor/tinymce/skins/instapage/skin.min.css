@@ -18,7 +18,7 @@ div.mce-fullscreen{position:fixed;top:0;left:0;width:100%;height:auto}
 .mce-charmap td{cursor:default;border:1px solid #c5c5c5;width:20px;height:20px;line-height:20px;text-align:center;vertical-align:middle;padding:2px}
 .mce-charmap td div{text-align:center}
 .mce-charmap td:hover{background:#d9d9d9}
-.mce-grid td div{border:1px solid #808080;width:12px;height:12px;margin:2px;cursor:pointer}
+.mce-grid td div{border:1px solid #808080;width:14px;height:14px;margin:2px;cursor:pointer}
 .mce-grid td div:hover{border-color:black}
 .mce-grid td div:focus{border-color:#59a5e1;outline:1px solid rgba(82,168,236,0.8);border-color:rgba(82,168,236,0.8)}
 .mce-grid{border-spacing:2px;border-collapse:separate}
@@ -462,9 +462,18 @@ i.mce-i-backcolor{text-shadow:none;background:#BBB}
 .widget-headline .mce-container.mce-panel.mce-first.mce-stack-layout-item {width: 466px;}
 .tinymce-link-textcolor {
     margin-top: -7px;
-    text-align: center;
+    padding: 0 7px;
 }
-.tinymce-link-textcolor > a {
+
+.tinymce-link-textcolor .flat-colors {
+	float: left;
+}
+
+.tinymce-link-textcolor .palette-colors {
+	float: right;
+}
+
+.tinymce-link-textcolor > div > a {
     color: #CCCCCC;
     cursor: pointer;
     font-size: 12px;
