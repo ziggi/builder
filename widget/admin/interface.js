@@ -21,29 +21,11 @@ $(function() {
 	});
 
 	$('#button-add').on('click', function() {
-		var isOpen = $('.admin-editor-slider').find('div').is('.toggle-open');
-		var isActive = $('.admin-editor-active').hasClass('admin-editor-add');
-
-		$('.admin-editor-wrapper').trigger('close');
-		$('.admin-editor-add').addClass('admin-editor-active');
-
-		if (!isOpen || !isActive) {
-			$('.admin-editor-wrapper').trigger('open');
-			$('.admin-editor-add').slideDown('fast');
-		}
+		$('.admin-editor-toolbar').trigger('toggle', 'admin-editor-add');
 	});
 
 	$('#button-setting').on('click', function() {
-		var isOpen = $('.admin-editor-slider').find('div').is('.toggle-open');
-		var isActive = $('.admin-editor-active').hasClass('admin-editor-setting');
-
-		$('.admin-editor-wrapper').trigger('close');
-		$('.admin-editor-setting').addClass('admin-editor-active');
-
-		if (!isOpen || !isActive) {
-			$('.admin-editor-wrapper').trigger('open');
-			$('.admin-editor-setting').slideDown('fast');
-		}
+		$('.admin-editor-toolbar').trigger('toggle', 'admin-editor-setting');
 	});
 
 	$('.admin-editor-wrapper').bind('open', function() {
@@ -55,6 +37,19 @@ $(function() {
 		$('.admin-editor-wrapper').removeClass('admin-editor-active');
 		$('.admin-editor-wrapper').slideUp('fast');
 		$('.admin-editor-slider').find('div').removeClass('toggle-open').addClass('toggle-close');
+	});
+
+	$('.admin-editor-toolbar').on('toggle', function(event, wrapperClass) {
+		var isOpen = $('.admin-editor-slider').find('div').is('.toggle-open');
+		var isActive = $('.admin-editor-active').hasClass(wrapperClass);
+
+		$('.admin-editor-wrapper').trigger('close');
+		$('.' + wrapperClass).addClass('admin-editor-active');
+		
+		if (!isOpen || !isActive) {
+			$('.admin-editor-wrapper').trigger('open');
+			$('.' + wrapperClass).slideDown('fast');
+		}
 	});
 
 });
