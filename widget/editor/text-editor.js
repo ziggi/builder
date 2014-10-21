@@ -52,10 +52,10 @@ $(function() {
 	});
 
 	$(document).on('textEditor', '.widget-text-editing', function(event, type, focus) {
-		var toolbar_items = "forecolor fontselect fontsizeselect weightmenu italic underline bullist numlist | alignleft aligncenter alignright | link | done";
+		var toolbar_items = "forecolor fontselect fontsizeselect weightmenu italic underline bullist numlist lineheight | alignleft aligncenter alignright | link | done";
 
 		if (type == 'headline') {
-			toolbar_items = "forecolor fontselect fontsizeselect weightmenu italic underline | alignleft aligncenter alignright | link | done";
+			toolbar_items = "forecolor fontselect fontsizeselect weightmenu italic underline lineheight | alignleft aligncenter alignright | link | done";
 		}
 
 		var $widget_text = $(this);
@@ -108,6 +108,13 @@ $(function() {
 					}
 				});
 
+
+				/*
+					
+					Weight menu
+
+				*/
+			
 				var weightArray = [];
 				var weightSizes = [100, 200, 300, 400, 500, 600, 700, 800, 900];
 
@@ -133,6 +140,40 @@ $(function() {
 					type: 'menubutton',
 					icon: 'bold',
 					menu: weightArray
+				});
+
+
+				/*
+
+					Line height menu
+
+				*/
+			
+				var heightArray = [];
+				var heightSizes = [0.5, 1, 1.5, 2, 2.5, 3];
+
+				$(heightSizes).each(function(index, value) {
+					heightArray.push({
+						text: value.toString(),
+						onclick: function() {
+							editor.execCommand('changeLineheight', true, value);
+						}
+					});
+				});
+
+				editor.addCommand('changeLineheight', function(ui, value) {
+					editor.formatter.register('weight-' + value, {
+						inline : 'span',
+						styles : {lineHeight: value.toString()}
+					});
+
+					editor.formatter.apply('weight-' + value);
+				});
+
+				editor.addButton('lineheight', {
+					type: 'menubutton',
+					icon: 'lineheight',
+					menu: heightArray
 				});
 			}
 		});

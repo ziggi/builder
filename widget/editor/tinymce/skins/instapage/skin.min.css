@@ -491,3 +491,7 @@ i.mce-i-backcolor{text-shadow:none;background:#BBB}
 	background-image: -o-linear-gradient(90deg, #151515, #060606 15.6%, #313131);
 	background-image: linear-gradient(0deg, #151515, #060606 15.6%, #313131);
 }
+
+.mce-i-lineheight {
+	background: url("img/lineheight.png") repeat scroll -10px -7px transparent;
+}
