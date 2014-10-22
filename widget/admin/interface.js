@@ -20,10 +20,9 @@ $(function() {
 		$(this).removeClass('controls-button-hover');
 	});
 
-	$('#button-preview').on('click', function() {
-		$.when($.save()).done(function() {
-			window.open('preview/index.html', '_blank');
-		});
+	$('#button-preview').on('click', function(e) {
+		$.save();
+		window.open('preview/index.html', '_blank');
 	});
 
 	$('#button-add').on('click', function() {
