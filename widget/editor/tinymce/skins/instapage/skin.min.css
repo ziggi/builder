@@ -495,3 +495,7 @@ i.mce-i-backcolor{text-shadow:none;background:#BBB}
 .mce-i-lineheight {
 	background: url("img/lineheight.png") repeat scroll -10px -7px transparent;
 }
+
+.mce-i-letterspacing {
+	background: url("img/letterspacing.png") repeat scroll -7px -10px transparent;
+}

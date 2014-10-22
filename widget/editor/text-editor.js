@@ -52,10 +52,10 @@ $(function() {
 	});
 
 	$(document).on('textEditor', '.widget-text-editing', function(event, type, focus) {
-		var toolbar_items = "forecolor fontselect fontsizeselect weightmenu italic underline bullist numlist lineheight | alignleft aligncenter alignright | link | done";
+		var toolbar_items = "forecolor fontselect fontsizeselect weightmenu italic underline bullist numlist lineheight letterspacing | alignleft aligncenter alignright | link | done";
 
 		if (type == 'headline') {
-			toolbar_items = "forecolor fontselect fontsizeselect weightmenu italic underline lineheight | alignleft aligncenter alignright | link | done";
+			toolbar_items = "forecolor fontselect fontsizeselect weightmenu italic underline lineheight letterspacing | alignleft aligncenter alignright | link | done";
 		}
 
 		var $widget_text = $(this);
@@ -162,18 +162,52 @@ $(function() {
 				});
 
 				editor.addCommand('changeLineheight', function(ui, value) {
-					editor.formatter.register('weight-' + value, {
+					editor.formatter.register('lineheight-' + value, {
 						inline : 'span',
 						styles : {lineHeight: value.toString()}
 					});
 
-					editor.formatter.apply('weight-' + value);
+					editor.formatter.apply('lineheight-' + value);
 				});
 
 				editor.addButton('lineheight', {
 					type: 'menubutton',
 					icon: 'lineheight',
 					menu: heightArray
+				});
+
+
+				/*
+
+					Letter spacing menu
+
+				*/
+			
+				var lsArray = [];
+				var lsSizes = [-1, -0.5, 0, 0.5, 1, 1.5, 2, 2.5, 3];
+
+				$(lsSizes).each(function(index, value) {
+					lsArray.push({
+						text: value.toString(),
+						onclick: function() {
+							editor.execCommand('changeLetterspacing', true, value);
+						}
+					});
+				});
+
+				editor.addCommand('changeLetterspacing', function(ui, value) {
+					editor.formatter.register('letterspacing-' + value, {
+						inline : 'span',
+						styles : {letterSpacing: value.toString() + 'px'}
+					});
+
+					editor.formatter.apply('letterspacing-' + value);
+				});
+
+				editor.addButton('letterspacing', {
+					type: 'menubutton',
+					icon: 'letterspacing',
+					menu: lsArray
 				});
 			}
 		});
