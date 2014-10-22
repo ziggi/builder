@@ -1,9 +1,12 @@
 .widget {
 	position: absolute;
-	cursor: default;
 	border: 1px solid #fff;
 	padding: 1px;
 	border-color: transparent;
+}
+
+.container_builder .widget {
+	cursor: default;
 }
 
 .widget-inner {

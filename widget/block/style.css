@@ -7,9 +7,12 @@
 	margin: 0 auto;
 	height: 100%;
 	width: 960px;
+	background-color: transparent;
+}
+
+.container_builder .block_inner {
 	border-left: 1px dashed #03ddff;
 	border-right: 1px dashed #03ddff;
-	background-color: transparent;
 }
 
 .block_inner_big {

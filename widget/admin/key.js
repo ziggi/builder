@@ -9,5 +9,9 @@ $(function() {
 		$('.active').trigger('delete');
 		return false;
 	});
+	
+	$.addKey(83, function() {
+		$.save();
+	});
 
 });

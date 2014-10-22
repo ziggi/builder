@@ -61,6 +61,14 @@
 	background-color: #efefef;
 }
 
+.admin-editor-header .icon-only {
+	height: 40px;
+	width: 56px;
+	padding: 0;
+	background-position: right top;
+	display: inline-block;
+}
+
 .rightborder {
 	border-right: 1px solid #cfcfcf;
 }
@@ -85,6 +93,14 @@
 	width: 20px;
 	position: absolute;
 	margin-left: -25px;
+}
+
+#button-preview:after {
+	content: "";
+	background: url('images/admin-preview.png') 18px 13px no-repeat;
+	height: 40px;
+	width: 56px;
+	position: absolute;
 }
 
 .admin-editor-toolbar {

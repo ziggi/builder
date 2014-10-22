@@ -2,14 +2,6 @@ body {
 	margin: 0;
 	padding: 0;
 	font: 13px/19px Arial,Helvetica,'Liberation Sans',FreeSans,sans-serif;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-}
-
-.container {
-	padding-top: 55px;
 }
 
 div {

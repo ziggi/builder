@@ -20,6 +20,12 @@ $(function() {
 		$(this).removeClass('controls-button-hover');
 	});
 
+	$('#button-preview').on('click', function() {
+		$.when($.save()).done(function() {
+			window.open('preview/index.html', '_blank');
+		});
+	});
+
 	$('#button-add').on('click', function() {
 		$('.admin-editor-toolbar').trigger('toggle', 'admin-editor-add');
 	});

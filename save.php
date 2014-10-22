@@ -1,9 +1,6 @@
 <?php
 
-$page = $_GET['page'];
-
-
-//copy('base.html', 'saved/index.html');
+$page = $_POST['page'];
 
 $fp = fopen('saved/index.html', 'w');
 if (!$fp) {
@@ -15,10 +12,6 @@ $page = stripslashes($page);
 $page = preg_replace("/[\t\r\n]+/", '', $page);
 
 fwrite($fp, $page);
-
-/*fwrite($fp, '
-	</body>
-	</html>');*/
 
 fclose($fp);
 
