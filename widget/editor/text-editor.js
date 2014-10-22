@@ -150,7 +150,7 @@ $(function() {
 				*/
 			
 				var heightArray = [];
-				var heightSizes = [0.5, 1, 1.5, 2, 2.5, 3];
+				var heightSizes = [0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3, 3.25, 3.5, 3.75, 4];
 
 				$(heightSizes).each(function(index, value) {
 					heightArray.push({
@@ -172,6 +172,7 @@ $(function() {
 
 				editor.addButton('lineheight', {
 					type: 'menubutton',
+					title: 'Междустрочный интевал',
 					icon: 'lineheight',
 					menu: heightArray
 				});
@@ -184,11 +185,11 @@ $(function() {
 				*/
 			
 				var lsArray = [];
-				var lsSizes = [-1, -0.5, 0, 0.5, 1, 1.5, 2, 2.5, 3];
+				var lsSizes = [-1, -0.75, -0.5, -0.25, 0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3, 3.25, 3.5, 3.75, 4];
 
 				$(lsSizes).each(function(index, value) {
 					lsArray.push({
-						text: value.toString(),
+						text: value.toString() + '  ',
 						onclick: function() {
 							editor.execCommand('changeLetterspacing', true, value);
 						}
@@ -206,6 +207,7 @@ $(function() {
 
 				editor.addButton('letterspacing', {
 					type: 'menubutton',
+					title: 'Междубуквенный интевал',
 					icon: 'letterspacing',
 					menu: lsArray
 				});

@@ -499,3 +499,7 @@ i.mce-i-backcolor{text-shadow:none;background:#BBB}
 .mce-i-letterspacing {
 	background: url("img/letterspacing.png") repeat scroll -7px -10px transparent;
 }
+
+.mce-menu {
+	min-width: 55px;
+}
