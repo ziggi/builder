@@ -1,11 +1,12 @@
 .widget-headline {
 	outline: none;
+	word-wrap: break-word;
 }
 
 .widget-headline .widget-inner .widget-headline-editor {
 	width: 100%;
 	outline: none;
-	line-height: 20px;
+	line-height: 1;
 }
 
 .widget-headline-selecting {

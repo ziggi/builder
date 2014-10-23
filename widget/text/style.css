@@ -1,11 +1,12 @@
 .widget-text {
 	outline: none;
+	padding: 5px;
 }
 
 .widget-text .widget-inner .widget-text-editor {
 	width: 100%;
 	outline: none;
-	line-height: 20px;
+	line-height: 1;
 }
 
 .widget-text-selecting {
