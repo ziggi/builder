@@ -55,7 +55,7 @@ $(function() {
 		$(this).element('remove');
 	});
 
-	$(document).on('copy', '.widget', function() {
+	$(document).on('clone', '.widget', function() {
 		$(this).element('clone');
 	});
 
