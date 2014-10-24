@@ -26,10 +26,12 @@ $(function() {
 	});
 
 	$('#button-add').on('click', function() {
+		$('.admin-editor-wrapper').height(100);
 		$('.admin-editor-toolbar').trigger('toggle', 'admin-editor-add');
 	});
 
 	$('#button-setting').on('click', function() {
+		$('.admin-editor-wrapper').height(100);
 		$('.admin-editor-toolbar').trigger('toggle', 'admin-editor-setting');
 	});
 
@@ -55,6 +57,14 @@ $(function() {
 			$('.admin-editor-wrapper').trigger('open');
 			$('.' + wrapperClass).slideDown('fast');
 		}
+	});
+
+	$('.admin-editor-toolbar').on('reset', function() {
+		$('.admin-editor-wrapper').trigger('close');
+		$('.admin-editor-wrapper').removeClass('admin-editor-active');
+
+		$('.admin-editor-wrapper').height(100);
+		$('.admin-editor-add').addClass('admin-editor-active');
 	});
 
 });

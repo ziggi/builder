@@ -116,7 +116,7 @@
 	background: #3b3b3b;
 }
 
-.admin-editor-toolbar .item {
+.admin-editor-items > div {
 	width: 78px;
 	height: 96px;
 	cursor: pointer;
@@ -137,7 +137,7 @@
 	font-family: Arial,Helvetica,'Liberation Sans',FreeSans,sans-serif;
 }
 
-.admin-editor-toolbar .item:before {
+.admin-editor-items > div:before {
 	content: "";
 	width: 48px;
 	height: 48px;
@@ -147,23 +147,23 @@
 	background-position: top;
 }
 
-.admin-editor-toolbar .item:hover {
+.admin-editor-items > div:hover {
 	background-color: #2a2a2a;
 }
 
-.admin-editor-toolbar .item-button:before {
+.admin-editor-items .item-button:before {
 	background-image: url('images/admin-add-button.png');
 }
 
-.admin-editor-toolbar .item-image:before {
+.admin-editor-items .item-image:before {
 	background-image: url('images/admin-add-image.png');
 }
 
-.admin-editor-toolbar .item-paragraph:before {
+.admin-editor-items .item-paragraph:before {
 	background-image: url('images/admin-add-paragraph.png');
 }
 
-.admin-editor-toolbar .item-headline:before {
+.admin-editor-items .item-headline:before {
 	background-image: url('images/admin-add-headline.png');
 }
 
@@ -197,4 +197,243 @@
 	height: 4px;
 	width: 7px;
 	margin: 5px auto 0;
+}
+
+.button-style-menu .button-text-options {
+position: relative;
+}
+
+.options_toolbar_element .fancy-rounded-darkgray-box {
+color: #fff;
+}
+
+.fancy-rounded-darkgray-box {
+float: left;
+margin-bottom: 11px;
+background-color: #232323;
+border: 1px solid #131313;
+-webkit-border-radius: 5px 5px 5px 5px;
+-moz-border-radius: 5px 5px 5px 5px;
+border-radius: 5px 5px 5px 5px;
+color: #fff;
+}
+
+.options_toolbar_element .column.first {
+padding-left: 0;
+}
+
+.button-style-menu .button_styles {
+margin-right: 0;
+}
+
+.options_toolbar_element .column {
+border-right: 1px solid #000;
+display: block;
+float: left;
+position: relative;
+}
+
+.button_styles {
+width: 195px;
+}
+
+.options_toolbar_element .column.last {
+border: 0;
+}
+
+.options_toolbar_element .option_styles .title, .options_toolbar_element .button_styles .title {
+font-size: 13px;
+}
+
+.options_toolbar_element .button-text.title {
+font-size: 13px;
+border-bottom: 1px solid #000;
+}
+
+.button-style-menu .button_styles>div {
+padding: 12px;
+}
+
+.title {
+font-weight: bold;
+font-size: 22px;
+line-height: 20px;
+}
+
+.button-textshadow-checkbox label {
+cursor: pointer;
+}
+
+.options_toolbar_element .button-text.title input {
+border: 1px solid #4f4f4f;
+border-radius: 3px;
+padding: 4px 10px;
+font-size: 13px;
+line-height: 13px;
+color: #fff;
+background-color: #131313;
+font-weight: normal;
+margin-top: 5px;
+margin-bottom: 0;
+width: 148px;
+float: left;
+margin-left: 0;
+}
+.button_styles .radiobutton_scaling_span {
+padding-left: 10px;
+font-weight: normal;
+}
+
+.button_styles label {
+cursor: pointer;
+}
+
+.radiobutton_scaling_span, .radiobutton_buttons_access {
+line-height: 11px;
+padding-left: 10px;
+color: #6e6e6e;
+font-size: 13px;
+margin-bottom: 10px;
+}
+
+.button_styles .radiobutton_buttons_access {
+padding-left: 0;
+padding-top: 4px;
+}
+
+.button-shadow-checkbox .radiobutton_buttons_access {
+margin-left: 0;
+padding-left: 0;
+}
+
+.left {
+float: left;
+}
+
+input[type=radio], input[type=checkbox] {
+margin: 4px 0 0;
+margin-top: 1px \9;
+line-height: normal;
+}
+
+input[type=checkbox], input[type=radio] {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+padding: 0;
+}
+
+.radiobutton_hide_page input, .radiobutton_scaling_image input, .radiobutton_buttons_access input {
+display: none;
+}
+
+.radiobutton_hide_page input[type="radio"].selected+span, .radiobutton_scaling_image input[type="radio"].selected+span, .radiobutton_buttons_access input[type="radio"].selected+span {
+background-position: left bottom;
+}
+
+.radiobutton_list span, .radiobutton_buttons_access span {
+width: 11px;
+height: 10px;
+display: block;
+background: url('images/admin-checkbox.png');
+background-position: left top;
+cursor: pointer;
+}
+
+.button-shadow-checkbox {
+margin-top: 2px;
+}
+
+.clear_both {
+clear: both;
+}
+
+.options_toolbar_element .option_styles {
+padding: 12px;
+font-size: 13px;
+height: 119px;
+padding-left: 15px;
+width: 118px;
+}
+
+#customize_form_buttons_colors_glossy_glossy {
+margin-top: 5px;
+line-height: 40px;
+width: 115px;
+height: 38px;
+-webkit-border-radius: 2px;
+-moz-border-radius: 2px;
+border-radius: 2px;
+background-color: #8a8a8a;
+margin-bottom: 12px;
+text-align: center;
+cursor: pointer;
+}
+
+.item-glossy.active #customize_form_buttons_colors_glossy_glossy {
+background: #1e5799;
+background: -moz-linear-gradient(top,#1e5799 0,#68bd0b 0,#4d930b 62%,#4d930b 99%);
+background: -webkit-gradient(linear,left top,left bottom,color-stop(0,#1e5799),color-stop(0,#68bd0b),color-stop(62%,#4d930b),color-stop(99%,#4d930b));
+background: -webkit-linear-gradient(top,#1e5799 0,#68bd0b 0,#4d930b 62%,#4d930b 99%);
+background: -o-linear-gradient(top,#1e5799 0,#68bd0b 0,#4d930b 62%,#4d930b 99%);
+background: -ms-linear-gradient(top,#1e5799 0,#68bd0b 0,#4d930b 62%,#4d930b 99%);
+background: linear-gradient(to bottom,#1e5799 0,#68bd0b 0,#4d930b 62%,#4d930b 99%);
+}
+
+.item-plain.active #customize_form_buttons_colors_glossy_plain {
+background: #509211;
+}
+
+#customize_form_buttons_colors_glossy_plain {
+line-height: 40px;
+width: 115px;
+height: 38px;
+-webkit-border-radius: 2px;
+-moz-border-radius: 2px;
+border-radius: 2px;
+background-color: #8a8a8a;
+text-align: center;
+cursor: pointer;
+margin-bottom: 10px;
+}
+
+.button-textshadow-checkbox .radiobutton_buttons_access {
+padding-left: 0;
+padding-top: 4px;
+}
+
+.button-textshadow-checkbox {
+margin-top: 5px;
+}
+
+.options_toolbar_element .column.last .color_options {
+padding-top: 2px;
+}
+
+.color_options .color-box {
+float: left;
+margin-bottom: 7px;
+font-size: 13px;
+}
+
+.pointer {
+cursor: pointer;
+}
+
+.color-box {
+width: 35px;
+height: 17px;
+display: inline-block;
+position: relative;
+-webkit-border-radius: 2px;
+-moz-border-radius: 2px;
+border-radius: 2px;
+}
+
+.options_toolbar_element .color_options div.color-name {
+padding-left: 6px;
+}
+
+.color_options .color-name {
+float: left;
 }

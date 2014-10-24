@@ -23,28 +23,31 @@ $(function() {
 		var $widget = $(this).parent();
 
 		$(document).bind('mousemove.widget-button', function(event) {
+			var new_top;
 			var new_height = $widget.position().top - event.pageY + $widget.height() + $widget.parents('.page_block').position().top;
 
 			var max_height = $widget.position().top + $widget.height();
 
 			if (new_height > max_height) {
-				$widget.css({
-					'top': event.pageY - $widget.parents('.page_block').position().top + (new_height - max_height),
-					'height': max_height
-				});
+				new_top = event.pageY - $widget.parents('.page_block').position().top + (new_height - max_height);
+				new_height = max_height;
 			} else {
 				if (new_height > BUTTON_HEIGHT_MIN) {
-					$widget.css({
-						'top': event.pageY - $widget.parents('.page_block').position().top,
-						'height': new_height
-					});
+					new_top = event.pageY - $widget.parents('.page_block').position().top;
 				} else {
-					$widget.css({
-						'top': $widget.position().top + $widget.height() - BUTTON_HEIGHT_MIN,
-						'height': BUTTON_HEIGHT_MIN
-					});
+					new_top = $widget.position().top + $widget.height() - BUTTON_HEIGHT_MIN;
+					new_height = BUTTON_HEIGHT_MIN;
 				}
 			}
+
+			$widget.css({
+				top: new_top
+			});
+
+			$widget.find('.dynamic-button').css({
+				top: new_top,
+				height: new_height,
+			});
 		});
 	});
 
@@ -54,11 +57,11 @@ $(function() {
 		$(document).bind('mousemove.widget-button', function(event) {
 			var new_width = event.pageX - $widget.position().left - getPageLeftOffset($widget);
 
-			if (new_width > BUTTON_WIDTH_MIN) {
-				$widget.css('width', new_width);
-			} else {
-				$widget.css('width', BUTTON_WIDTH_MIN);
+			if (new_width <= BUTTON_WIDTH_MIN) {
+				new_width = BUTTON_WIDTH_MIN;
 			}
+
+			$widget.find('.dynamic-button').css('width', new_width);
 		});
 	});
 
@@ -71,14 +74,14 @@ $(function() {
 			var max_height = $widget.parents('.page_block').height() - $widget.position().top;
 
 			if (new_height > max_height) {
-				$widget.css('height', max_height);
+				new_height = max_height;
 			} else {
-				if (new_height > BUTTON_HEIGHT_MIN) {
-					$widget.css('height', new_height);
-				} else {
-					$widget.css('height', BUTTON_HEIGHT_MIN);
+				if (new_height <= BUTTON_HEIGHT_MIN) {
+					new_height = BUTTON_HEIGHT_MIN;
 				}
 			}
+
+			$widget.find('.dynamic-button').css('height', new_height);
 		});
 	});
 
@@ -86,19 +89,24 @@ $(function() {
 		var $widget = $(this).parent();
 
 		$(document).bind('mousemove.widget-button', function(event) {
+			var new_left;
 			var new_width = $widget.position().left - event.pageX + $widget.width() + getPageLeftOffset($widget);
 
 			if (new_width > BUTTON_WIDTH_MIN) {
-				$widget.css({
-					'left': event.pageX - getPageLeftOffset($widget),
-					'width': new_width
-				});
+				new_left = event.pageX - getPageLeftOffset($widget);
 			} else {
-				$widget.css({
-					'left': $widget.position().left + $widget.width() - BUTTON_WIDTH_MIN,
-					'width': BUTTON_WIDTH_MIN
-				});
+				new_left = $widget.position().left + $widget.width() - BUTTON_WIDTH_MIN;
+				new_width = BUTTON_WIDTH_MIN;
 			}
+
+			$widget.css({
+				left: new_left
+			});
+
+			$widget.find('.dynamic-button').css({
+				left: new_left,
+				width: new_width
+			});
 		});
 	});
 });
