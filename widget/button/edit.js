@@ -2,6 +2,7 @@ $(function() {
 
 	$(document).on('inactive', function() {
 		$('.admin-editor-toolbar').trigger('reset');
+		$('.button-text').find('input').removeClass('widget-text-editing');
 	});
 
 	/*
@@ -11,6 +12,7 @@ $(function() {
 	$(document).on('edit', '.widget-button', function() {
 		$('.admin-editor-wrapper').height(140);
 		$('.admin-editor-toolbar').trigger('toggle', 'admin-editor-button');
+		$('.button-text').find('input').addClass('widget-text-editing');
 
 		$button = $('.widget.active .dynamic-button');
 		$('.admin-editor-toolbar .button-text input').val( $button.text() );
