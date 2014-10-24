@@ -61,7 +61,7 @@
 	$(function() {
 		$('[id^="element-"]').each(function(index, value) {
 
-			var id = $(this).attr('id').match(/^element\-(\d)$/)[1];
+			var id = $(this).attr('id').match(/^element\-(\d+)$/)[1];
 
 			if (id > elementId) {
 				elementId = id;
