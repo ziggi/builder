@@ -2,7 +2,6 @@ $(function() {
 
 	var TEXT_WIDTH_MIN = 100;
 
-
 	$(document).on('active', '.widget-text', function() {
 		$(this).widgetResize('init', 'side');
 	});

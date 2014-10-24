@@ -25,6 +25,7 @@ $(function() {
 	});
 
 	$(document).on('editStop', '.widget-headline-editor', function() {
+		$(this).parents('.widget').find('.widget-editor').show();
 		$(this).removeClass('widget-text-editing');
 		$(this).removeClass('widget-text-selecting');
 		$(this).removeAttr('id');

@@ -10,11 +10,8 @@ $(function() {
 		return false;
 	});
 
-	$(document).on('mousedown', '.widget-image .resize-block', function(event) {
-		$(document).bind('mouseup.widget-image', function(event) {
-			$(this).unbind('mousemove.widget-image');
-			$(this).unbind('mouseup.widget-image');
-		});
+	$(document).on('mouseup', function() {
+		$(this).unbind('mousemove.widget-image');
 	});
 
 	$(document).on('mousedown', '.widget-image .resize-block-n, .widget-image .resize-block-ne', function() {

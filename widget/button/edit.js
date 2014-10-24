@@ -4,6 +4,10 @@ $(function() {
 		$('.admin-editor-toolbar').trigger('reset');
 	});
 
+	/*
+		editor init
+	 */
+	
 	$(document).on('edit', '.widget-button', function() {
 		$('.admin-editor-wrapper').height(140);
 		$('.admin-editor-toolbar').trigger('toggle', 'admin-editor-button');
@@ -29,13 +33,27 @@ $(function() {
 		$('.button-text-color .color-box').css('background-color', $button.css('color'));
 	});
 
-	$(document).on('click', '#customize_form_buttons_colors_glossy_glossy', function(event) {
-		$button = $('.widget.active .dynamic-button');
-		$button.addClass('glossy');
+	/*
+		button text
+	 */
+	
+	$(document).on('keyup', '.button-text input', function(event) {
+		$widget = $('.widget.active');
 
-		var rgb = $button.css('background-color').match(/\d+/g);
-		$button.trigger('setGradient', [parseInt(rgb[0]), parseInt(rgb[1]), parseInt(rgb[2])]);
+		var button_text = $(this).val();
+		$widget.find('.dynamic-button').text(button_text);
+
+		var button_width = $widget.find('.dynamic-button').width();
+		var widget_width = $widget.width();
+		
+		if (button_width > widget_width) {
+			$widget.width(button_width);
+		}
 	});
+
+	/*
+		button background color
+	 */
 
 	$(document).on('click', '.button-background-color .color-box', function(e) {
 		$button = $('.widget.active .dynamic-button');
@@ -61,6 +79,10 @@ $(function() {
 		return false;
 	});
 
+	/*
+		button text color
+	 */
+	
 	$(document).on('click', '.button-text-color .color-box', function(e) {
 		$button = $('.widget.active .dynamic-button');
 		$color_box = $(this);
@@ -81,11 +103,38 @@ $(function() {
 		return false;
 	});
 
+	/*
+		button style
+	 */
+
+	$(document).on('click', '.option_styles .item', function() {
+		var isActive = $(this).hasClass('active');
+
+		if (!isActive) {
+			$('.option_styles .item').removeClass('active');
+			$(this).addClass('active');
+		}
+	});
+
+	$(document).on('click', '#customize_form_buttons_colors_glossy_glossy', function(event) {
+		$button = $('.widget.active .dynamic-button');
+		$button.addClass('glossy');
+
+		var rgb = $button.css('background-color').match(/\d+/g);
+		$button.trigger('setGradient', [parseInt(rgb[0]), parseInt(rgb[1]), parseInt(rgb[2])]);
+	});
+
 	$(document).on('click', '#customize_form_buttons_colors_glossy_plain', function(event) {
-		$('.widget.active .dynamic-button').removeClass('glossy');
+		$button = $('.widget.active .dynamic-button');
+		$button.removeClass('glossy');
+
 		$button.css('background-image', '');
 	});
 
+	/*
+		button shadow
+	 */
+	
 	$(document).on('click', '#customize_form_buttons_style_shadow', function() {
 		$widget = $('.widget.active .dynamic-button');
 
@@ -100,6 +149,10 @@ $(function() {
 		}
 	});
 
+	/*
+		button corners
+	 */
+	
 	$(document).on('click', '#customize_form_buttons_style_corners', function() {
 		$widget = $('.widget.active .dynamic-button');
 
@@ -114,6 +167,10 @@ $(function() {
 		}
 	});
 
+	/*
+		button text shadow
+	 */
+	
 	$(document).on('click', '#customize_form_buttons_style_textshadow', function() {
 		$widget = $('.widget.active .dynamic-button');
 
@@ -125,29 +182,6 @@ $(function() {
 		} else {
 			$widget.addClass('text-shadow');
 			$(this).addClass('selected');
-		}
-	});
-
-	$(document).on('click', '.option_styles .item', function() {
-		var isActive = $(this).hasClass('active');
-
-		if (!isActive) {
-			$('.option_styles .item').removeClass('active');
-			$(this).addClass('active');
-		}
-	});
-
-	$(document).on('keyup', '.button-text input', function(event) {
-		$widget = $('.widget.active');
-
-		var button_text = $(this).val();
-		$widget.find('.dynamic-button').text(button_text);
-
-		var button_width = $widget.find('.dynamic-button').width();
-		var widget_width = $widget.width();
-		
-		if (button_width > widget_width) {
-			$widget.width(button_width);
 		}
 	});
 

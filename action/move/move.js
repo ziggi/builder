@@ -3,10 +3,10 @@ $(function() {
 	$(document).on('mousedown', '.widget', function(event) {
 		var isResizeBlock = $(event.target).is('.resize-block');
 		var isWidgetEditor = $(event.target).parents('.widget-editor').length !== 0;
-		var isEditing = $(this).find('.widget-text-editing').length !== 0;
+		var isTextEditing = $(this).find('.widget-text-editing').length !== 0;
 		var isNotLeftClick = event.which !== 1;
 
-		if (isResizeBlock || isWidgetEditor || isEditing || isNotLeftClick) {
+		if (isResizeBlock || isWidgetEditor || isTextEditing || isNotLeftClick) {
 			return;
 		}
 
