@@ -7,18 +7,9 @@ $(function() {
 		$(this).widgetResize('init', 'side');
 	});
 
-	$(document).on('mousedown', '.widget-text .resize-block', function(event) {
-		var $obj = $(this).parent();
-		if ($obj.data('editing')) {
-			event.stopImmediatePropagation();
-		}
-
-		$(document).bind('mouseup.widget-text', function(event) {
-			$(this).unbind('mousemove.widget-text');
-			$(this).unbind('mouseup.widget-text');
-		});
+	$(document).on('mouseup', function() {
+		$(this).unbind('mousemove.widget-text');
 	});
-
 
 	$(document).on('mousedown', '.widget-text .resize-block-e', function() {
 		var $widget = $(this).parent();

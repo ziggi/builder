@@ -6,8 +6,8 @@
 
 .admin-editor-header {
 	background: #fff;
-	height: 38px;
-	position: fixed;
+	height: 40px;
+	position: relative;
 	width: 100%;
 	z-index: 10000;
 	border-bottom: 1px solid #a0a0a0;
@@ -105,12 +105,12 @@
 
 .admin-editor-toolbar {
 	position: relative;
-	top: 38px;
 	z-index: 10000;
 }
 
 .admin-editor-toolbar .admin-editor-wrapper {
 	display: none;
+	left: 0;
 	padding: 10px;
 	height: 100px;
 	background: #3b3b3b;
@@ -179,9 +179,9 @@
 	margin: 0 auto;
 	padding: 0;
 	text-align: center;
-	-moz-box-shadow: 0 0 5px #555;
-	-webkit-box-shadow: 0 0 5px #555;
-	box-shadow: 0 0 5px #555;
+	-moz-box-shadow: 0 1px 5px #555;
+	-webkit-box-shadow: 0 1px 5px #555;
+	box-shadow: 0 1px 5px #555;
 	z-index: 10000;
 }
 

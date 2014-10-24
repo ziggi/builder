@@ -2,8 +2,8 @@ $(function() {
 	
 	$(document).on('mousedown', '.widget', function(event) {
 		var isResizeBlock = $(event.target).is('.resize-block');
-		var isWidgetEditor = $(event.target).parents('.widget-editor').is('.widget-editor');
-		var isEditing = $(this).data('editing');
+		var isWidgetEditor = $(event.target).parents('.widget-editor').length !== 0;
+		var isEditing = $(this).find('.widget-text-editing').length !== 0;
 		var isNotLeftClick = event.which !== 1;
 
 		if (isResizeBlock || isWidgetEditor || isEditing || isNotLeftClick) {
@@ -33,8 +33,9 @@ $(function() {
 				newX = rightBorder;
 			}
 
-			if (newY < 55) {
-				newY = 55;
+			var min_top_pos = $('.admin-editor').height();
+			if (newY < min_top_pos) {
+				newY = min_top_pos;
 			} else if (newY > $(document).height() - $widget.height() - 10) {
 				newY = $(document).height() - $widget.height() - 10;
 			}

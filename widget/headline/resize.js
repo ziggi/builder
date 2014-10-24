@@ -6,18 +6,9 @@ $(function() {
 		$(this).widgetResize('init', 'side');
 	});
 
-	$(document).on('mousedown', '.widget-headline .resize-block', function(event) {
-		var $obj = $(this).parent();
-		if ($obj.data('editing')) {
-			event.stopImmediatePropagation();
-		}
-
-		$(document).bind('mouseup.widget-headline', function(event) {
-			$(this).unbind('mousemove.widget-headline');
-			$(this).unbind('mouseup.widget-headline');
-		});
+	$(document).on('mouseup', function() {
+		$(this).unbind('mousemove.widget-headline');
 	});
-
 
 	$(document).on('mousedown', '.widget-headline .resize-block-e', function() {
 		var $widget = $(this).parent();

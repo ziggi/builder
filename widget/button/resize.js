@@ -6,17 +6,9 @@ $(function() {
 	$(document).on('active', '.widget-button', function() {
 		$(this).widgetResize('init');
 	});
-
-	$(document).on('mousedown', '.widget-button .resize-block', function(event) {
-		var $widget = $(this).parent();
-		if ($widget.data('editing')) {
-			event.stopImmediatePropagation();
-		}
-		
-		$(document).bind('mouseup.widget-button', function(event) {
-			$(this).unbind('mousemove.widget-button');
-			$(this).unbind('mouseup.widget-button');
-		});
+	
+	$(document).on('mouseup', function(event) {
+		$(this).unbind('mousemove.widget-button');
 	});
 
 	$(document).on('mousedown', '.widget-button .resize-block-n, .widget-button .resize-block-nw, .widget-button .resize-block-ne', function() {

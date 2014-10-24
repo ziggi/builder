@@ -34,7 +34,7 @@ $(function() {
 		$button.addClass('glossy');
 
 		var rgb = $button.css('background-color').match(/\d+/g);
-		$button.trigger('linear-gradient', [parseInt(rgb[0]), parseInt(rgb[1]), parseInt(rgb[2])]);
+		$button.trigger('setGradient', [parseInt(rgb[0]), parseInt(rgb[1]), parseInt(rgb[2])]);
 	});
 
 	$(document).on('click', '.button-background-color .color-box', function(e) {
@@ -51,7 +51,7 @@ $(function() {
 					$button.css('background-color', color.toHexString());
 
 					if ($button.hasClass('glossy')) {
-						$button.trigger('linear-gradient', [parseInt(color._r), parseInt(color._g), parseInt(color._b)]);
+						$button.trigger('setGradient', [parseInt(color._r), parseInt(color._g), parseInt(color._b)]);
 					}
 				}
 			});
@@ -151,7 +151,7 @@ $(function() {
 		}
 	});
 
-	$(document).on('linear-gradient', '.dynamic-button', function(event, red, green, blue) {
+	$(document).on('setGradient', '.dynamic-button', function(event, red, green, blue) {
 		var bg_from_str = 'rgb(' + red + ', ' + green + ', ' + blue + ')';
 		var bg_to_str = 'rgb(' + (red + 26) + ', ' + (green + 26) + ', ' + (blue + 26) + ')';
 
