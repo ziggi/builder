@@ -15,6 +15,7 @@ $(function() {
 	});
 
 	$(document).on('editStart', '.widget-text-editor', function() {
+		$(this).parents('.widget').widgetResize('reset');
 		$(this).parents('.widget').find('.widget-editor').hide();
 		$(this).parents('.widget-text').data('editing', true);
 		$(this).addClass('widget-text-editing');
