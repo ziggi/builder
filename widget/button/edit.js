@@ -93,7 +93,7 @@ $(function() {
 				showButtons: false,
 				color: $button.css('color'),
 				move: function(color) {
-					$color_box.css('color', color.toHexString());
+					$color_box.css('background-color', color.toHexString());
 					$button.css('color', color.toHexString());
 				}
 			});

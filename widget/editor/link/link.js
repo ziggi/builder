@@ -25,6 +25,10 @@ $(function() {
 		$(this).trigger(editor_action);
 	});
 
+	/*
+		buttons
+	 */
+
 	$(document).on('back', '.widget-editor .link-menu', function() {
 		$('.link-menu').hide();
 
@@ -32,7 +36,7 @@ $(function() {
 		if (isTextEditing) {
 			$(this).trigger('textEditorShow');
 		} else {
-			$('.widget-editor .menu').show();
+			$(this).parents('.widget').trigger('editor-menu');
 		}
 	});
 
@@ -51,6 +55,4 @@ $(function() {
 	$(document).on('remove', '.widget-editor .link-menu', function() {
 		console.log('remove');
 	});
-
-
 });

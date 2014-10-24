@@ -21,7 +21,6 @@ $(function() {
 
 		if (!isWidget && !isWidgetEditor && !isTextEditing && !isAdminClick) {
 			$('.widget').trigger('inactive');
-			console.log($(event.target).html());
 		}
 	});
 

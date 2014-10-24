@@ -7,10 +7,10 @@ $(function() {
 	$(document).on('edit', '.widget-text', function() {
 		var $edit_block = $(this).find('.widget-text-editor');
 
-		if ($edit_block.attr('contenteditable') === 'false' || $edit_block.attr('contenteditable') === undefined) {
-			$edit_block.trigger('editStart');
-		} else {
+		if ($edit_block.hasClass('widget-text-editing')) {
 			$edit_block.trigger('editStop');
+		} else {
+			$edit_block.trigger('editStart');
 		}
 	});
 

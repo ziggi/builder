@@ -193,7 +193,7 @@ div.widget-text-editing {
 
 .duplicate-button:before {
 	content: " ";
-	background: url('img-ip2-btns_builder-selector2-504.png') top left;
+	background: url('images/img-ip2-btns_builder-selector2-504.png') top left;
 	width: 15px;
 	height: 16px;
 	position: absolute;
@@ -222,7 +222,7 @@ div.widget-text-editing {
 
 .arrange-button:before {
 	content: " ";
-	background: url('img-ip2-btns_builder-selector2-504.png') top right;
+	background: url('images/img-ip2-btns_builder-selector2-504.png') top right;
 	width: 15px;
 	height: 16px;
 	position: absolute;
@@ -250,7 +250,7 @@ div.widget-text-editing {
 
 .url-button:before {
 	content: " ";
-	background: url('img-ip2-btns_builder-link-504.png') 0 6px no-repeat;
+	background: url('images/img-ip2-btns_builder-link-504.png') 0 6px no-repeat;
 	width: 24px;
 	height: 24px;
 	position: absolute;
@@ -278,7 +278,7 @@ div.widget-text-editing {
 
 .delete-button:before {
 	content: " ";
-	background: url('img-ip2-btns_builder-selector2-504.png') bottom right;
+	background: url('images/img-ip2-btns_builder-selector2-504.png') bottom right;
 	width: 15px;
 	height: 15px;
 	position: absolute;

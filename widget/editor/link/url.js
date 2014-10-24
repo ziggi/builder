@@ -36,7 +36,7 @@ $(function() {
 		if (isTextEditing) {
 			$(this).trigger('textEditorShow');
 		} else {
-			$('.widget-editor .menu').show();
+			$(this).parents('.widget').trigger('editor-menu');
 		}
 	});
 

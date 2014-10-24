@@ -1,18 +1,9 @@
 $(function() {
 
-	$(document).on('textEditorShow', function() {
-		$('[id^="mceu_"]').show();
-	});
-
-	$(document).on('textEditorHide', function() {
-		$('[id^="mceu_"]').hide();
-	});
-
 	$(document).on('click', '.flat-colors a', function() {
 		var $container = $(this).parents('.mce-container');
 
 		var isFlatColors = $('.flat-color-block').is(':visible');
-
 		if (isFlatColors) {
 			$('.flat-color-block').hide();
 			$container.find('.mce-colorbutton-grid').show();
@@ -22,7 +13,7 @@ $(function() {
 			$container.find('.mce-colorbutton-grid').not('.mce-colorflat-grid').hide();
 			$(this).text('Обычные');
 
-			var isCreated = $('.flat-color-block').length > 0;
+			var isCreated = $('.flat-color-block').length !== 0;
 			if (!isCreated) {
 				$.get('widget/editor/flat_colors.html', function(data) {
 					$(data)
@@ -49,6 +40,14 @@ $(function() {
 		
 		$('#tinymce-color-picker').spectrum('toggle');
 		return false;
+	});
+
+	$(document).on('textEditorShow', function() {
+		$('[id^="mceu_"]').show();
+	});
+
+	$(document).on('textEditorHide', function() {
+		$('[id^="mceu_"]').hide();
 	});
 
 	$(document).on('textEditor', '.widget-text-editing', function(event, type, focus) {

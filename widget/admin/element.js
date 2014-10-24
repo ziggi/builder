@@ -27,6 +27,16 @@
 				.trigger('active');
 		},
 
+		arrange: function(value) {
+			this.css('z-index', value);
+
+			if (parseInt(this.css('z-index')) <= 0) {
+				this.css('z-index', 0);
+				return 0;
+			}
+			return 1;
+		},
+
 		remove: function() {
 			this.remove();
 		},
