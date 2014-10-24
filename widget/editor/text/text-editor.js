@@ -78,13 +78,17 @@ $(function() {
 				editor.on('BeforeExecCommand', function(e) {
 					isTextNotSelected = editor.selection.getContent().length === 0;
 					if (isTextNotSelected) {
-						editor.selection.select(editor.getBody(), true);
+						if (e.command !== 'mceInsertContent' && e.command !== 'SelectAll') {
+							editor.selection.select(editor.getBody(), true);
+						}
 					}
 				});
 
 				editor.on('ExecCommand', function(e) {
 					if (isTextNotSelected) {
-						editor.selection.collapse();
+						if (e.command !== 'mceInsertContent' && e.command !== 'SelectAll') {
+							editor.selection.collapse();
+						}
 						isTextNotSelected = false;
 					}
 				});

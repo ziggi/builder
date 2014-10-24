@@ -1,6 +1,7 @@
 .widget-headline {
-	outline: none;
 	word-wrap: break-word;
+	outline: none;
+	padding: 5px;
 }
 
 .widget-headline .widget-inner .widget-headline-editor {
