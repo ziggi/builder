@@ -3,7 +3,8 @@
 	var defaults = 'all';
 	var types = {
 		all: ['n', 'e', 's', 'w', 'ne', 'se', 'sw', 'nw'],
-		side: ['w', 'e']
+		side: ['w', 'e'],
+		popup: ['w', 'e', 'n', 's']
 	};
 
 	var methods = {

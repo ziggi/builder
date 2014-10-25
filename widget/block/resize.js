@@ -6,7 +6,7 @@ $(function() {
 		$(this).unbind('mousemove.page_block');
 	});
 	
-	$(document).on('mousedown', '.page_block .resize-line', function() {
+	$(document).on('mousedown', '.page_blocks .page_block .resize-line', function(event) {
 		$block = $(this).parent();
 
 		var new_height = event.pageY - $block.position().top;

@@ -1,6 +1,6 @@
 $(function() {
 	
-	$(document).on('mousedown', '.widget', function(event) {
+	$(document).on('mousedown', '.page_blocks .widget', function(event) {
 		var isResizeBlock = $(event.target).is('.resize-block');
 		var isWidgetEditor = $(event.target).parents('.widget-editor').length !== 0;
 		var isTextEditing = $(this).find('.widget-text-editing').length !== 0;
@@ -51,7 +51,7 @@ $(function() {
 
 			var $block = null;
 
-			$('.page_block').each(function(index, item) {
+			$('.page_blocks .page_block').each(function(index, item) {
 				if (event.pageY > $(this).position().top && event.pageY < $(this).position().top + $(this).height()) {
 					$block = $(this);
 				}

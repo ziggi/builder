@@ -1,8 +1,8 @@
-.page_block {
+.page_blocks .page_block {
 	position: relative;
 }
 
-.block_inner {
+.page_blocks .block_inner {
 	position: relative;
 	margin: 0 auto;
 	height: 100%;
@@ -10,18 +10,18 @@
 	background-color: transparent;
 }
 
-.container_builder .block_inner {
+.container_builder .page_blocks .block_inner {
 	border-left: 1px dashed #03ddff;
 	border-right: 1px dashed #03ddff;
 }
 
-.block_inner_big {
+.page_blocks .block_inner_big {
 	position: relative;
 	width: 100%;
 	height: 100%;
 }
 
-.resize-line {
+.page_blocks .resize-line {
 	position: absolute;
 	height: 5px;
 	bottom: -1px;
@@ -30,4 +30,4 @@
 	z-index: 0;
 	border-bottom: 1px dashed #03ddff;
 	cursor: ns-resize;
-} 
+}

@@ -45,7 +45,7 @@ $(function() {
 	});
 	
 	$(document).on('popup', '.widget-editor .link-menu', function() {
-		console.log('popup');
+		$(this).trigger('popupShow');
 	});
 	
 	$(document).on('download', '.widget-editor .link-menu', function() {

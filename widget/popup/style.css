@@ -1,0 +1,56 @@
+.page_blocks_popup .overlay {
+	position: fixed;
+	display: none;
+	top: 0;
+	left: 0;
+	background: #333;
+	opacity: .8;
+	z-index: 200;
+	width: 100%;
+	height: 100%;
+}
+
+.page_blocks_popup .page_block {
+	position: fixed;
+	background-color: #fff;
+	z-index: 10020;
+	border-radius: 5px;
+}
+
+.page_blocks_popup .resize-line-s {
+	position: fixed;
+	background-color: transparent;
+	height: 0px;
+	width: 100%;
+	border-bottom: 1px dashed #03ddff;
+	z-index: 10010;
+}
+
+.page_blocks_popup .resize-line-n {
+	position: fixed;
+	background-color: transparent;
+	height: 0px;
+	width: 100%;
+	border-bottom: 1px dashed #03ddff;
+	z-index: 10010;
+}
+
+.page_blocks_popup .resize-line-e {
+	position: fixed;
+	background-color: transparent;
+	height: 100%;
+	width: 0px;
+	top: 0;
+	border-left: 1px dashed #03ddff;
+	z-index: 10010;
+}
+
+.page_blocks_popup .resize-line-w {
+	position: fixed;
+	background-color: transparent;
+	height: 100%;
+	width: 0px;
+	top: 0;
+	border-left: 1px dashed #03ddff;
+	z-index: 10010;
+}
