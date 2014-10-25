@@ -10,6 +10,7 @@ if (!$fp) {
 	exit;
 }
 
+$page = stripslashes($page);
 fwrite($fp, $page);
 
 fwrite($fp, '
