@@ -1,0 +1,21 @@
+.guide-vertical {
+	position: absolute;
+	display: none;
+	z-index: 10000;
+	top: 0;
+	left: 20px;
+	height: 100%;
+	width: 1px;
+	background-color: #0f0;
+}
+
+.guide-horizontal {
+	position: absolute;
+	display: none;
+	z-index: 10000;
+	top: 70px;
+	left: 0;
+	height: 1px;
+	width: 100%;
+	background-color: #0f0;
+}

@@ -27,6 +27,10 @@ $(function() {
 			newX = event.pageX - cursorOffsetX;
 			newY = event.pageY - cursorOffsetY;
 
+			/*
+				Проверяем на выход за границу браузера
+			 */
+			
 			if (newX < leftBorder) {
 				newX = leftBorder;
 			} else if (newX > rightBorder) {
@@ -39,6 +43,53 @@ $(function() {
 			} else if (newY > $(document).height() - $widget.height() - 10) {
 				newY = $(document).height() - $widget.height() - 10;
 			}
+
+			/*
+				Добавляем вертикальные направляющие
+			 */
+			
+			var vertical_guidePosArray = [$(window).outerWidth() / 2];
+			var horizontal_guidePosArray = [$(window).outerHeight() / 2];
+
+			$('.widget').each(function(index, value) {
+				if ($(this).is($widget)) {
+					return true;
+				}
+
+				vertical_guidePosArray.push(
+					$(this).offset().left,
+					$(this).offset().left + $(this).outerWidth() / 2,
+					$(this).offset().left + $(this).outerWidth()
+				);
+
+				horizontal_guidePosArray.push(
+					$(this).offset().top,
+					$(this).offset().top + $(this).outerHeight() / 2,
+					$(this).offset().top + $(this).outerHeight()
+				);
+			});
+
+			var guideOptions = {
+				verticalGuides: vertical_guidePosArray,
+				verticalObjs: [
+					newX,
+					newX + $widget.outerWidth() / 2,
+					newX + $widget.outerWidth()
+				],
+
+				horizontalGuides: horizontal_guidePosArray,
+				horizontalObjs: [
+					newY,
+					newY + $widget.outerHeight() / 2,
+					newY + $widget.outerHeight()
+				]
+			};
+
+			$.guide('check', guideOptions);
+
+			/*
+				Обновляем координаты
+			 */
 
 			$widget.offset({
 				left: newX,
@@ -79,7 +130,8 @@ $(function() {
 
 				$block_inner.prepend($widget);
 			}
-			
+
+			$.guide('hide');
 			$(this).unbind('mousemove.widget');
 			$(this).unbind('mouseup.widget');
 		});
