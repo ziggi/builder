@@ -1,7 +1,10 @@
 $(function() {
 
 	$(document).on('mouseenter', '.widget', function() {
-		$(this).addClass('hover');
+		var isActive = $('.widget.active').length !== 0;
+		if (!isActive) {
+			$(this).addClass('hover');
+		}
 	});
 	
 	$(document).on('mouseleave', '.widget', function() {
