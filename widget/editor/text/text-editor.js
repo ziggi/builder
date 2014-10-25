@@ -15,7 +15,7 @@ $(function() {
 
 			var isCreated = $('.flat-color-block').length !== 0;
 			if (!isCreated) {
-				$.get('widget/editor/flat_colors.html', function(data) {
+				$.get('widget/editor/text/flat_colors.html', function(data) {
 					$(data)
 						.prependTo($container)
 						.show();

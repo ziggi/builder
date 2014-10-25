@@ -4,7 +4,7 @@
 		var minifyPage = $('.container').clone();
 		minifyPage
 			.removeClass('container_builder')
-			.find('.resize-line, .resize-block, .widget-editor').remove();
+			.find('.resize-line, .resize-block, .widget-editor, div[class^="resize-line"]').remove();
 
 		$.ajax({
 			type: 'POST',
