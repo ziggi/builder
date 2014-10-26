@@ -18,8 +18,9 @@ $(function() {
 		//var isTextEditing = $(event.target).parents('.widget-text-editing').length !== 0;
 		var isTextEditing = $(event.target).parents('[id^="mceu_"]').length !== 0 || $(event.target).find('[id^="mceu_"]').length !== 0;
 		var isAdminClick = $(event.target).parents('.admin-editor').length !== 0;
+		var isPalette = $(event.target).parents('.sp-container').length !== 0;
 
-		if (!isWidget && !isWidgetEditor && !isTextEditing && !isAdminClick) {
+		if (!isWidget && !isWidgetEditor && !isTextEditing && !isAdminClick && !isPalette) {
 			$('.widget').trigger('inactive');
 		}
 	});

@@ -33,7 +33,7 @@ $(function() {
 		} else {
 			$('#customize_form_buttons_colors_glossy_plain').parents('.item').addClass('active');
 		}
-		
+
 		$('.button-background-color .color-box').css('background-color', $button.css('background-color'));
 		$('.button-text-color .color-box').css('background-color', $button.css('color'));
 	});
@@ -68,6 +68,13 @@ $(function() {
 		if (!isCreated) {
 			$(this).spectrum({
 				showButtons: false,
+				showPalette: true,
+				palette: [
+					['rgb(26, 188, 156)', 'rgb(46, 204, 113)', 'rgb(52, 152, 219)', 'rgb(155, 89, 182)', 'rgb(52, 73, 94)'],
+					['rgb(22, 160, 133)', 'rgb(39, 174, 96)', 'rgb(41, 128, 185)', 'rgb(142, 68, 173)', 'rgb(44, 62, 80)'],
+					['rgb(241, 196, 15)', 'rgb(230, 126, 34)', 'rgb(231, 76, 60)', 'rgb(236, 240, 241)', 'rgb(149, 165, 166)'],
+					['rgb(243, 156, 18)', 'rgb(211, 84, 0)', 'rgb(192, 57, 43)', 'rgb(189, 195, 199)', 'rgb(127, 140, 141)']
+				],
 				color: $button.css('background-color'),
 				move: function(color) {
 					$color_box.css('background-color', color.toHexString());
@@ -97,6 +104,13 @@ $(function() {
 			$(this).spectrum({
 				showButtons: false,
 				color: $button.css('color'),
+				showPalette: true,
+				palette: [
+					['rgb(26, 188, 156)', 'rgb(46, 204, 113)', 'rgb(52, 152, 219)', 'rgb(155, 89, 182)', 'rgb(52, 73, 94)'],
+					['rgb(22, 160, 133)', 'rgb(39, 174, 96)', 'rgb(41, 128, 185)', 'rgb(142, 68, 173)', 'rgb(44, 62, 80)'],
+					['rgb(241, 196, 15)', 'rgb(230, 126, 34)', 'rgb(231, 76, 60)', 'rgb(236, 240, 241)', 'rgb(149, 165, 166)'],
+					['rgb(243, 156, 18)', 'rgb(211, 84, 0)', 'rgb(192, 57, 43)', 'rgb(189, 195, 199)', 'rgb(127, 140, 141)']
+				],
 				move: function(color) {
 					$color_box.css('background-color', color.toHexString());
 					$button.css('color', color.toHexString());
