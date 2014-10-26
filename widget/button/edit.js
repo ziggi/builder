@@ -26,11 +26,14 @@ $(function() {
 		if ($button.hasClass('text-shadow')) {
 			$('#customize_form_buttons_style_textshadow').addClass('selected');
 		}
+
+		$('.option_styles .item').removeClass('active');
 		if ($button.hasClass('glossy')) {
 			$('#customize_form_buttons_colors_glossy_glossy').parents('.item').addClass('active');
 		} else {
 			$('#customize_form_buttons_colors_glossy_plain').parents('.item').addClass('active');
 		}
+		
 		$('.button-background-color .color-box').css('background-color', $button.css('background-color'));
 		$('.button-text-color .color-box').css('background-color', $button.css('color'));
 	});
