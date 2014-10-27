@@ -3,6 +3,7 @@ $(function() {
 	$(document).on('inactive', function() {
 		$('.admin-editor-toolbar').trigger('reset');
 		$('.button-text').find('input').removeClass('widget-text-editing');
+		$('.color-box').spectrum('destroy');
 	});
 
 	/*
@@ -22,7 +23,7 @@ $(function() {
 		} else {
 			$('#customize_form_buttons_style_corners').removeClass('selected');
 		}
-		
+
 		if ($button.hasClass('shadow')) {
 			$('#customize_form_buttons_style_shadow').addClass('selected');
 		} else {
@@ -119,7 +120,7 @@ $(function() {
 					['rgb(241, 196, 15)', 'rgb(230, 126, 34)', 'rgb(231, 76, 60)', 'rgb(236, 240, 241)', 'rgb(149, 165, 166)'],
 					['rgb(243, 156, 18)', 'rgb(211, 84, 0)', 'rgb(192, 57, 43)', 'rgb(189, 195, 199)', 'rgb(127, 140, 141)']
 				],
-				color: $('.widget.active .dynamic-button').css('background-color'),
+				color: $('.widget.active .dynamic-button').attr('data-hover-color'),
 				move: function(color) {
 					$color_box.css('background-color', color.toHexString());
 					$('.widget.active .dynamic-button').attr('data-hover-color', color.toHexString());

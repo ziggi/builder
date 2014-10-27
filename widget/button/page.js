@@ -8,8 +8,8 @@ $(function() {
 	});
 
 	$(document).on('mouseenter', '.widget-button', function() {
-		$button = $(this).find('.dynamic-button');
-		color = $button.attr('data-hover-color');
+		var $button = $(this).find('.dynamic-button');
+		var color = $button.attr('data-hover-color');
 
 		if ($button.hasClass('glossy')) {
 			var colorObj = hexToRgb(color);
@@ -20,7 +20,7 @@ $(function() {
 	});
 
 	$(document).on('mouseleave', '.widget-button', function() {
-		$button = $(this).find('.dynamic-button');
+		var $button = $(this).find('.dynamic-button');
 
 		if ($button.hasClass('glossy')) {
 			var colorObj = hexToRgb( $button.attr('data-default-color') );
