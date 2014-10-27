@@ -6,11 +6,21 @@
 		add: function(page) {
 			elementId++;
 
-			var element_on_point = document.elementFromPoint($(window).width() / 2, $(window).height() / 2);
-			var $block_inner = $(element_on_point).parents('.page_block').find('.block_inner');
+			var $block_inner = null;
 
-			if ($block_inner.length === 0) {
-				$block_inner = $(element_on_point).find('.block_inner');
+			if ($('.page_blocks_popup .page_block').is(':visible')) {
+				$block_inner = $('.page_blocks_popup .block_inner:visible');
+			}
+
+			if ($block_inner === null) {
+				var center_top = $(window).height() / 2 + $(window).scrollTop();
+
+				$('.block_inner, .block_inner_big').each(function(index, item) {
+					if (center_top > $(this).offset().top && center_top < $(this).offset().top + $(this).height()) {
+						$block_inner = $(this);
+						return false;
+					}
+				});
 			}
 
 			$.get(page, function(data) {
