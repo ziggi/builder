@@ -14,7 +14,13 @@ $(function() {
 				url: 'widget/popup/popup.html',
 				success: function(data) {
 					$popup = $(data).appendTo($('.page_blocks_popup'));
-					$popup.attr('data-id', $widget.attr('id'));
+					
+					$popup
+						.attr('data-id', $widget.attr('id'))
+						.css({
+							left: $(window).width() / 2 - $popup.width() / 2,
+							top: $(window).height() / 2 - $popup.height() / 2
+						});
 				}
 			});
 		}
