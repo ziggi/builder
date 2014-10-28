@@ -1,7 +1,7 @@
 .widget-text {
 	word-wrap: break-word;
 	outline: none;
-	padding: 5px;
+	padding: 1px;
 }
 
 .widget-text .widget-inner .widget-text-editor {
