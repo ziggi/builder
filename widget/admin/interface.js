@@ -27,9 +27,7 @@ $(function() {
 
 	$(document).on('inactive', function() {
 		var isPopup = $(event.target).parents('.page_blocks_popup').length !== 0;
-		if (isPopup) {
-
-		} else {
+		if (!isPopup) {
 			$('.back-bar').hide();
 		}
 	});
