@@ -1,5 +1,5 @@
 .guide-vertical {
-	position: absolute;
+	position: fixed;
 	display: none;
 	z-index: 10000;
 	top: 0;
@@ -10,7 +10,7 @@
 }
 
 .guide-horizontal {
-	position: absolute;
+	position: fixed;
 	display: none;
 	z-index: 10000;
 	top: 70px;

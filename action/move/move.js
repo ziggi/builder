@@ -45,7 +45,7 @@ $(function() {
 			}
 
 			/*
-				Добавляем вертикальные направляющие
+				Добавляем направляющие
 			 */
 			
 			var vertical_guidePosArray = [$(window).outerWidth() / 2];

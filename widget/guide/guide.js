@@ -23,8 +23,7 @@
 
 				$(objInfo.horizontalObjs).each(function(objIndex, objPos) {
 					if (objPos > guidePos - 2 && objPos < guidePos + 2) {
-						console.log(guidePos);
-						$.guide('horizontal', guidePos);
+						$.guide('horizontal', guidePos - $(window).scrollTop());
 						isContinue = false;
 						return false;
 					} else {
