@@ -2,9 +2,12 @@
 
 	$.save = function() {
 		var minifyPage = $('.container').clone();
+
+		minifyPage
+			.find('.page_blocks_popup').hide();
+
 		minifyPage
 			.removeClass('container_builder')
-			.find('.page_blocks_popup').hide()
 			.find('.resize-line, .resize-block, .widget-editor, div[class^="resize-line"], .guide-x, .guide-y').remove();
 
 		$.ajax({
