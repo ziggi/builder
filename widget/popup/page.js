@@ -6,7 +6,12 @@ $(function() {
 		if ($popup.length !== 0) {
 			$('.page_blocks_popup').show('fast');
 			$('.page_blocks_popup .overlay').show();
-			$popup.show();
+			$popup
+				.show()
+				.css({
+					left: $(window).width() / 2 - $popup.width() / 2,
+					top: $(window).height() / 2 - $popup.height() / 2
+				});
 		}
 	});
 
