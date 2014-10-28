@@ -2,6 +2,7 @@ $(function() {
 
 	var BUTTON_WIDTH_MIN = 70;
 	var BUTTON_HEIGHT_MIN = 30;
+	var FONT_SIZE_RATIO = 0.4;
 
 	$(document).on('active', '.widget-button', function() {
 		$(this).widgetResize('init');
@@ -39,6 +40,7 @@ $(function() {
 			$widget.find('.dynamic-button').css({
 				top: new_top,
 				height: new_height,
+				fontSize: new_height * FONT_SIZE_RATIO
 			});
 		});
 	});
@@ -73,7 +75,10 @@ $(function() {
 				}
 			}
 
-			$widget.find('.dynamic-button').css('height', new_height);
+			$widget.find('.dynamic-button').css({
+				height: new_height,
+				fontSize: new_height * FONT_SIZE_RATIO
+			});
 		});
 	});
 
