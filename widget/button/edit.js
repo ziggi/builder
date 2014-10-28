@@ -11,10 +11,15 @@ $(function() {
 	 */
 	
 	$(document).on('edit', '.widget-button', function() {
+		// admin
 		$('.admin-editor-wrapper').height(140);
 		$('.admin-editor-toolbar').trigger('toggle', 'admin-editor-button');
 		$('.button-text').find('input').addClass('widget-text-editing');
 
+		$('.backbar-title').text('Настройки кнопки');
+		$('.back-bar').show();
+
+		// admin button wrapper
 		var $button = $('.widget.active .dynamic-button');
 		$('.admin-editor-toolbar .button-text input').val( $button.text() );
 

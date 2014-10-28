@@ -20,6 +20,23 @@
 				</li>
 			</ul>
 		</div>
+		<div class="back-bar" style="display: none;">
+			<div class="left">
+				<ul>
+					<li class="hover-tip">
+						<div class="button-back toogle-oracle rightborder"></div>
+					</li>
+				</ul>
+			</div>
+			<div class="left backbar-title"></div>
+			<div class="right">
+				<ul>
+					<li>
+						<div class="button-done">Готово</div>
+					</li>
+				</ul>
+			</div> 
+		</div>
 	</div>
 	<div class="admin-editor-toolbar">
 		<div class="admin-editor-wrapper admin-editor-items admin-editor-setting">
@@ -46,83 +63,83 @@
 		</div>
 		<div class="admin-editor-wrapper admin-editor-button">
 <div class="options_toolbar_element autohide button-style-menu" style="display: block;">
-    <div class="menu_wrapper">
-        <div class="scrollablemenu">
-            <div class="fancy-rounded-darkgray-box button-text-options">
-                <div class="button_styles column first">
-                    <div class="button-text title">
-                        <div>Текст кнопки</div>
-                        <input type="text" name="button-text" value="">
-                        <div class="clear_both"></div>
-                    </div>
-                    <div class="button-alignment title" style="height: 39px;">
-                        <div class="checkbox button-shadow-checkbox">
-                            <label class="radiobutton_buttons_access left">
-                                <input type="radio" id="customize_form_buttons_style_shadow" name="buttons_shadow"> <span></span> </label>
-                            <label for="customize_form_buttons_style_shadow" class="radiobutton_scaling_span">Отбрасывать тень</label> <span></span> </div>
-                        <div style="clear: both;"></div>
-                        <div class="checkbox">
-                            <label class="radiobutton_buttons_access left">
-                                <input type="radio" id="customize_form_buttons_style_corners" name="buttons_corners"> <span></span> </label>
-                            <label for="customize_form_buttons_style_corners" class="radiobutton_scaling_span">Закругить углы</label> <span></span> </div>
-                        <div class="clear_both"></div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div id="customize_form_buttons_colors_glossy" class="option_styles">
-                        <div class="title">Стиль кнопки</div>
-                        <div class="item item-glossy">
-                            <a id="customize_form_buttons_colors_glossy_glossy2" href="#" class="buttons_glossy glossy"></a>
-                            <label id="customize_form_buttons_colors_glossy_glossy">Объёмный</label>
-                        </div>
-                        <div class="item item-plain last">
-                            <a id="customize_form_buttons_colors_glossy_plain2" href="#" class="buttons_glossy plain"></a>
-                            <label id="customize_form_buttons_colors_glossy_plain">Плоский</label>
-                        </div>
-                        <div style="clear: both;"></div>
-                    </div>
-                </div>
-                <div class="column last">
-                    <div class="option_styles">
-                        <div class="title">Цвет кнопки</div>
-                        <div class="color_options">
-                            <div class="button-background-color color_options">
-                                <div class="color-box pointer" style="background-color: rgb(0, 102, 204);"></div>
-                                <div class="color-name">Кнопка</div>
-                                <div style="clear: both;"></div>
-                            </div>
-                            <div class="button-hover-color color_options">
-                                <div class="color-box pointer" style="background-color: rgb(0, 102, 204);"></div>
-                                <div class="color-name">Наведение</div>
-                                <div style="clear: both;"></div>
-                            </div>
-                            <div class="button-text-color color_options">
-                                <div class="color-box pointer" style="background-color: rgb(255, 255, 255);"></div>
-                                <div class="color-name">Текст</div>
-                                <div style="clear: both;"></div>
-                            </div>
-                        </div>
-                        <div style="clear: both;"></div>
-                        <div class="checkbox button-textshadow-checkbox">
-                            <label class="radiobutton_buttons_access left">
-                                <input type="radio" id="customize_form_buttons_style_textshadow" name="buttons_textshadow"> <span></span> </label>
-                            <label for="customize_form_buttons_style_textshadow" class="radiobutton_scaling_span">Тень текста</label> <span></span> </div>
-                    </div>
-                </div>
-            </div>
-            <div class="column last">
-                <div class="button-image">
-                    <div class="img-uploader no-image left"></div>
-                    <div class="clear"></div>
-                    <div class="menu_background_customize_change left" style="display: none;"><span>Change</span>
-                    </div>
-                    <div class="menu_background_customize_remove left" style="display: none;"><span>Remove</span>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="menu_wrapper">
+		<div class="scrollablemenu">
+			<div class="fancy-rounded-darkgray-box button-text-options">
+				<div class="button_styles column first">
+					<div class="button-text title">
+						<div>Текст кнопки</div>
+						<input type="text" name="button-text" value="">
+						<div class="clear_both"></div>
+					</div>
+					<div class="button-alignment title" style="height: 39px;">
+						<div class="checkbox button-shadow-checkbox">
+							<label class="radiobutton_buttons_access left">
+								<input type="radio" id="customize_form_buttons_style_shadow" name="buttons_shadow"> <span></span> </label>
+							<label for="customize_form_buttons_style_shadow" class="radiobutton_scaling_span">Отбрасывать тень</label> <span></span> </div>
+						<div style="clear: both;"></div>
+						<div class="checkbox">
+							<label class="radiobutton_buttons_access left">
+								<input type="radio" id="customize_form_buttons_style_corners" name="buttons_corners"> <span></span> </label>
+							<label for="customize_form_buttons_style_corners" class="radiobutton_scaling_span">Закругить углы</label> <span></span> </div>
+						<div class="clear_both"></div>
+					</div>
+				</div>
+				<div class="column">
+					<div id="customize_form_buttons_colors_glossy" class="option_styles">
+						<div class="title">Стиль кнопки</div>
+						<div class="item item-glossy">
+							<a id="customize_form_buttons_colors_glossy_glossy2" href="#" class="buttons_glossy glossy"></a>
+							<label id="customize_form_buttons_colors_glossy_glossy">Объёмный</label>
+						</div>
+						<div class="item item-plain last">
+							<a id="customize_form_buttons_colors_glossy_plain2" href="#" class="buttons_glossy plain"></a>
+							<label id="customize_form_buttons_colors_glossy_plain">Плоский</label>
+						</div>
+						<div style="clear: both;"></div>
+					</div>
+				</div>
+				<div class="column last">
+					<div class="option_styles">
+						<div class="title">Цвет кнопки</div>
+						<div class="color_options">
+							<div class="button-background-color color_options">
+								<div class="color-box pointer" style="background-color: rgb(0, 102, 204);"></div>
+								<div class="color-name">Кнопка</div>
+								<div style="clear: both;"></div>
+							</div>
+							<div class="button-hover-color color_options">
+								<div class="color-box pointer" style="background-color: rgb(0, 102, 204);"></div>
+								<div class="color-name">Наведение</div>
+								<div style="clear: both;"></div>
+							</div>
+							<div class="button-text-color color_options">
+								<div class="color-box pointer" style="background-color: rgb(255, 255, 255);"></div>
+								<div class="color-name">Текст</div>
+								<div style="clear: both;"></div>
+							</div>
+						</div>
+						<div style="clear: both;"></div>
+						<div class="checkbox button-textshadow-checkbox">
+							<label class="radiobutton_buttons_access left">
+								<input type="radio" id="customize_form_buttons_style_textshadow" name="buttons_textshadow"> <span></span> </label>
+							<label for="customize_form_buttons_style_textshadow" class="radiobutton_scaling_span">Тень текста</label> <span></span> </div>
+					</div>
+				</div>
+			</div>
+			<div class="column last">
+				<div class="button-image">
+					<div class="img-uploader no-image left"></div>
+					<div class="clear"></div>
+					<div class="menu_background_customize_change left" style="display: none;"><span>Change</span>
+					</div>
+					<div class="menu_background_customize_remove left" style="display: none;"><span>Remove</span>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 		</div>
 		<div class="admin-editor-slider">

@@ -24,6 +24,20 @@ $(function() {
 			$('.admin-editor-toolbar').trigger('open');
 		}
 	});
+
+	$(document).on('inactive', function() {
+		var isPopup = $(event.target).parents('.page_blocks_popup').length !== 0;
+		if (isPopup) {
+
+		} else {
+			$('.back-bar').hide();
+		}
+	});
+
+	$('.back-bar .button-back, .back-bar .button-done').on('click', function() {
+		$('.back-bar').hide();
+		$('.admin-editor-toolbar').trigger('reset');
+	});
 	
 	$('.controls-button').on({
 		mouseenter: function() {

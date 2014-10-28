@@ -1,6 +1,22 @@
 $(function() {
-	
+
+	$('.back-bar .button-back, .back-bar .button-done').on('click', function() {
+		var $popup = $('.page_blocks_popup .page_block:visible');
+		if ($popup.length === 0) {
+			return;
+		}
+
+		$(document).trigger('popupHide');
+
+		var $widget = $('#' + $popup.attr('data-id'));
+		
+		if ($widget.length !== 0) {
+			$widget.trigger('active');
+		}
+	});
+
 	$(document).on('popupShow', '.widget-editor .link-menu', function() {
+		// popup
 		var $widget = $(this).parents('.widget');
 
 		var $popup = $('.page_blocks_popup').find('[data-id=' + $widget.attr('id') + ']');
@@ -25,24 +41,24 @@ $(function() {
 			});
 		}
 
-		$('.widget').trigger('inactive');
-		$('.admin-editor-toolbar').trigger('toggle', 'admin-editor-add');
-
 		$('.page_blocks_popup .overlay').show();
 		$('.page_blocks_popup').show();
 		$popup.show();
 
 		$popup.trigger('popupResize');
+
+		// admin
+		$('.widget').trigger('inactive');
+		$('.admin-editor-toolbar').trigger('toggle', 'admin-editor-add');
+
+		$('.backbar-title').text('Всплывающее окно');
+		$('.back-bar').show();
 	});
 
 	$(document).on('popupHide', function() {
 		$('.page_blocks_popup').hide();
 		$('.page_blocks_popup .page_block').hide();
 		$('.page_blocks_popup .page_block').widgetResize('reset');
-	});
-
-	$(document).on('click', '.page_blocks_popup .overlay', function() {
-		$(document).trigger('popupHide');
 	});
 
 });

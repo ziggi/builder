@@ -10,7 +10,6 @@
 	position: relative;
 	width: 100%;
 	z-index: 10000;
-	border-bottom: 1px solid #a0a0a0;
 }
 
 .admin-editor-header .controls-left {
@@ -436,4 +435,76 @@ padding-left: 6px;
 
 .color_options .color-name {
 float: left;
+}
+
+.back-bar {
+overflow: visible;
+position: fixed;
+text-align: center;
+top: 0;
+width: 100%;
+z-index: 210000;
+background: #fff;
+color: #fff;
+margin: 0 auto;
+height: 40px;
+}
+
+.back-bar .button-back {
+width: 56px;
+height: 40px;
+padding: 0;
+}
+
+.back-bar .button-back:after {
+content: "";
+background: url('images/admin-back.png') 22px 12px no-repeat;
+height: 40px;
+width: 56px;
+position: absolute;
+left: 0;
+}
+
+.hover-tip {
+position: relative;
+}
+
+.toogle-oracle {
+cursor: pointer;
+}
+
+.toogle-oracle:hover {
+background-color: #ebebeb;
+}
+
+.back-bar .backbar-title {
+color: #3f3f3f;
+font-family: Arial;
+font-size: 15px;
+line-height: 40px;
+padding-left: 14px;
+font-weight: bold;
+}
+
+.back-bar .button-done {
+width: 143px;
+height: 40px;
+text-align: center;
+font-size: 15px;
+color: #fff;
+line-height: 39px;
+cursor: pointer;
+background-image: -webkit-linear-gradient(top,#499f0f,#408c0d);
+background-image: -moz-linear-gradient(top,#499f0f,#408c0d);
+background-image: -o-linear-gradient(top,#499f0f,#408c0d);
+background-image: linear-gradient(to bottom,#499f0f,#408c0d);
+}
+
+.back-bar .button-done:hover {
+background-image: none;
+background-color: #51ad14;
+}
+
+.right {
+float: right;
 }
