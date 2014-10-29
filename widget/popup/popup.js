@@ -48,7 +48,7 @@ $(function() {
 		$popup.trigger('popupResize');
 
 		// admin
-		$('.widget').trigger('inactive');
+		$('.widget.active').trigger('inactive');
 		$('.admin-editor-toolbar').trigger('toggle', 'admin-editor-add');
 
 		$('.backbar-title').text('Всплывающее окно');

@@ -8,7 +8,7 @@ $(function() {
 			return;
 		}
 
-		$('.widget').trigger('inactive');
+		$('.widget.active').trigger('inactive');
 		$widget.trigger('active');
 	});
 
@@ -21,7 +21,7 @@ $(function() {
 		var isPalette = $(event.target).parents('.sp-container').length !== 0;
 
 		if (!isWidget && !isWidgetEditor && !isTextEditing && !isAdminClick && !isPalette) {
-			$('.widget').trigger('inactive');
+			$('.widget.active').trigger('inactive');
 		}
 	});
 
