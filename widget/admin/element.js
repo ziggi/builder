@@ -24,7 +24,9 @@
 			}
 
 			$.get(page, function(data) {
-				$widget = $(data).appendTo($block_inner);
+				var $widget = $(data).appendTo($block_inner);
+
+				$('.widget.active').trigger('inactive');
 
 				$widget
 					.attr('id', 'element-' + elementId)

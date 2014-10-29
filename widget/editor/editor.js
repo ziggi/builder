@@ -1,6 +1,6 @@
 $(function() {
 
-	$(document).on('inactive', '.widget', function(event) {
+	$(document).on('inactive', '.widget', function() {
 		$('.widget-editor').remove();
 	});
 
