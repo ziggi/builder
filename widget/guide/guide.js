@@ -2,37 +2,34 @@
 
 	var methods = {
 		check: function(objInfo) {
-			$(objInfo.verticalGuides).each(function(guideIndex, guidePos) {
-				var isContinue = true;
+			for (var i in objInfo.verticalGuides) {
+				var guidePos = objInfo.verticalGuides[i];
 
-				$(objInfo.verticalObjs).each(function(objIndex, objPos) {
+				for (var j in objInfo.verticalObjs) {
+					var objPos = objInfo.verticalObjs[j];
+
 					if (objPos > guidePos - 2 && objPos < guidePos + 2) {
 						$.guide('vertical', guidePos);
-						isContinue = false;
 						return false;
 					} else {
 						$.guide('hide', 'vertical');
 					}
-				});
+				}
+			}
+			for (var i in objInfo.horizontalGuides) {
+				var guidePos = objInfo.horizontalGuides[i];
 
-				return isContinue;
-			});
+				for (var j in objInfo.horizontalObjs) {
+					var objPos = objInfo.horizontalObjs[j];
 
-			$(objInfo.horizontalGuides).each(function(guideIndex, guidePos) {
-				var isContinue = true;
-
-				$(objInfo.horizontalObjs).each(function(objIndex, objPos) {
 					if (objPos > guidePos - 2 && objPos < guidePos + 2) {
 						$.guide('horizontal', guidePos - $(window).scrollTop());
-						isContinue = false;
 						return false;
 					} else {
 						$.guide('hide', 'horizontal');
 					}
-				});
-
-				return isContinue;
-			});
+				}
+			}
 		},
 		hide: function(type) {
 			if (type === undefined) {
