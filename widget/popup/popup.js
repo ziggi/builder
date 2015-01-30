@@ -41,6 +41,7 @@ $(function() {
 			});
 		}
 
+		$(document).trigger('popupHide');
 		$('.page_blocks_popup .overlay').show();
 		$('.page_blocks_popup').show();
 		$popup.show();
