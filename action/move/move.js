@@ -47,6 +47,8 @@ $(function() {
 			verticalGuides: vertical_guidePosArray,
 			horizontalGuides: horizontal_guidePosArray
 		};
+		
+		var min_top_pos = $('.admin-editor').height();
 
 		$(document).bind('mousemove.widget', {obj: $widget}, function(event) {
 			$widget = event.data.obj;
@@ -64,7 +66,6 @@ $(function() {
 				newX = rightBorder;
 			}
 
-			var min_top_pos = $('.admin-editor').height();
 			if (newY < min_top_pos) {
 				newY = min_top_pos;
 			} else if (newY > $(document).height() - $widget.height() - 10) {

@@ -1,4 +1,8 @@
 (function( $ ) {
+	var isShowed = {
+		vertical: false,
+		horizontal: false
+	};
 
 	var methods = {
 		check: function(objInfo) {
@@ -9,9 +13,13 @@
 					var objPos = objInfo.verticalObjs[j];
 
 					if (objPos > guidePos - 2 && objPos < guidePos + 2) {
+						isShowed.vertical = true;
+
 						$.guide('vertical', guidePos);
 						return false;
-					} else {
+					} else if (isShowed.vertical === true) {
+						isShowed.vertical = false;
+
 						$.guide('hide', 'vertical');
 					}
 				}
@@ -23,9 +31,13 @@
 					var objPos = objInfo.horizontalObjs[j];
 
 					if (objPos > guidePos - 2 && objPos < guidePos + 2) {
+						isShowed.horizontal = true;
+
 						$.guide('horizontal', guidePos - $(window).scrollTop());
 						return false;
-					} else {
+					} else if (isShowed.horizontal === true) {
+						isShowed.horizontal = false;
+
 						$.guide('hide', 'horizontal');
 					}
 				}
@@ -33,21 +45,25 @@
 		},
 		hide: function(type) {
 			if (type === undefined) {
-				$('.guide-horizontal').hide();
-				$('.guide-vertical').hide();
+				$('.guide-vertical').css('display', 'none');
+				$('.guide-horizontal').css('display', 'none');
 			} else {
-				$('.guide-' + type).hide();
+				$('.guide-' + type).css('display', 'none');
 			}
 		},
 		vertical: function(posX) {
 			$('.guide-vertical')
-				.css('left', posX)
-				.show();
+				.css({
+					left: posX,
+					display: 'block'
+				});
 		},
 		horizontal: function(posY) {
 			$('.guide-horizontal')
-				.css('top', posY)
-				.show();
+				.css({
+					top: posY,
+					display: 'block'
+				});
 		}
 	};
 
