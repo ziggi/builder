@@ -1,19 +1,21 @@
-(function( $ ){
+window.addEventListener('load', function() {
 
 	var keyHandler = {};
 
-	$.addKey = function(key, func) {
+	addKey = function(key, func) {
 		keyHandler[key] = func;
 	}
 
-	$(document).on('keydown', function(event) {
-		var isEdit = $('.widget-text-editing').length !== 0;
+	document.addEventListener('keydown', function(event) {
+		var isEdit = document.querySelectorAll('.widget-text-editing').length !== 0;
 		if (isEdit) {
 			return;
 		}
 
 		if (keyHandler[event.keyCode] != undefined) {
-			return keyHandler[event.keyCode]();
+			if (keyHandler[event.keyCode]()) {
+				event.preventDefault();
+			}
 		}
 	});
-})(jQuery);
+});

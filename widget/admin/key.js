@@ -1,16 +1,16 @@
-$(function() {
+window.addEventListener('load', function() {
 
-	$.addKey(8, function() {
+	addKey(8, function() {
 		$('.active').trigger('delete');
-		return false;
+		return true;
 	});
 
-	$.addKey(46, function() {
+	addKey(46, function() {
 		$('.active').trigger('delete');
-		return false;
+		return true;
 	});
 	
-	$.addKey(83, function() {
+	addKey(83, function() {
 		$.save();
 	});
 
