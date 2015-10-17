@@ -2,7 +2,7 @@
 Landing Page Builder
 
 ## Stage
-Development
+Closed (replaced by [loppy](https://github.com/ziggi/loppy)).
 
 ## Demo
 http://ziggi.org/builder/
